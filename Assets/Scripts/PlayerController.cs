@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float jumpCutMultiplier = 0.5f;
 
     [Header("Estadísticas de Gravedad")]
-    [SerializeField] private float fallMultiplier = 2.5f; // <--- NUEVO: Hace que la caída sea más rápida y pesada
+    [SerializeField] private float fallMultiplier = 2.5f;
 
     [Header("Estadísticas de Dash (Botas del Impulso)")]
     [SerializeField] private float dashSpeed = 20f;
@@ -23,9 +23,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.2f;
 
+    // --- NUEVO: SISTEMA DE COMBATE Y VIDA ---
+    [Header("Combate")]
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private LayerMask enemyLayers;
+    [SerializeField] private float attackDamage = 10f;
+    [SerializeField] private float attackRate = 2f; // Cuántos ataques por segundo
+    private float nextAttackTime = 0f;
+
+    [Header("Salud y Energía")]
+    [SerializeField] private float maxHealth = 100f;
+    private float currentHealth;
+    private bool isInvulnerable = false;
+    [SerializeField] private float invulnerabilityDuration = 1f;
+    // ----------------------------------------
+
     // Referencias y Estados
     private Rigidbody2D rb;
     private PlayerControls controls;
+    private SpriteRenderer spriteRenderer; // <--- NUEVA REFERENCIA
     private Vector2 moveInput;
     private bool isGrounded;
 
@@ -38,13 +55,20 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // <--- ASIGNACIÓN
         originalGravity = rb.gravityScale;
         controls = new PlayerControls();
+
+        // Inicializar Vida
+        currentHealth = maxHealth;
 
         // Suscripciones al New Input System
         controls.Gameplay.Jump.performed += ctx => Jump();
         controls.Gameplay.Jump.canceled += ctx => JumpCancel();
         controls.Gameplay.Dash.performed += ctx => StartDash();
+
+        // --- NUEVO: Suscripción del botón de ataque ---
+        controls.Gameplay.Attack.performed += ctx => Attack();
     }
 
     private void OnEnable() => controls.Enable();
@@ -63,12 +87,11 @@ public class PlayerController : MonoBehaviour
         if (isDashing) return;
 
         ApplyMovement();
-        ApplyGravity(); // <--- NUEVO: Evaluamos la gravedad en cada frame físico
+        ApplyGravity();
     }
 
     private void ApplyMovement()
     {
-        // Actualizado a linearVelocity
         rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
 
         if (moveInput.x > 0)
@@ -83,17 +106,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // <--- NUEVO METODO COMPLETO --->
     private void ApplyGravity()
     {
-        // Si Eira está cayendo (su velocidad vertical es negativa), aumentamos su escala de gravedad
         if (rb.linearVelocity.y < 0)
         {
             rb.gravityScale = originalGravity * fallMultiplier;
         }
         else
         {
-            // Si está subiendo o en el suelo, restauramos la gravedad original
             rb.gravityScale = originalGravity;
         }
     }
@@ -102,7 +122,6 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
-            // Actualizado a linearVelocity
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
@@ -110,7 +129,6 @@ public class PlayerController : MonoBehaviour
 
     private void JumpCancel()
     {
-        // Actualizado a linearVelocity
         if (rb.linearVelocity.y > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
@@ -131,18 +149,91 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
 
         rb.gravityScale = 0f;
-        // Actualizado a linearVelocity
         rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0f);
 
         yield return new WaitForSeconds(dashDuration);
 
-        // Restauramos a la originalGravity en lugar de 1f, para respetar configuraciones del Rigidbody
         rb.gravityScale = originalGravity;
         isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
+
+    // --- NUEVOS MÉTODOS DE COMBATE Y VIDA ---
+    private void Attack()
+    {
+        // Control de cooldown del ataque
+        if (Time.time < nextAttackTime) return;
+
+        Debug.Log("Eira ataca");
+
+        // Detectar enemigos en rango
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            // Verificamos si el objeto tocado tiene el script "Enemy"
+            if (enemy.TryGetComponent<Enemy>(out Enemy enemyComponent))
+            {
+                enemyComponent.TakeDamage(attackDamage);
+            }
+        }
+
+        // Calcular cuándo podemos volver a atacar
+        nextAttackTime = Time.time + 1f / attackRate;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (isInvulnerable) return;
+
+        currentHealth -= damage;
+        Debug.Log($"Eira ha recibido daño. Salud restante: {currentHealth}");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            StartCoroutine(InvulnerabilityRoutine());
+        }
+    }
+
+    private IEnumerator InvulnerabilityRoutine()
+    {
+        isInvulnerable = true;
+
+        // Efecto visual: Parpadeo en rojo durante el tiempo de invulnerabilidad
+        float blinkInterval = 0.1f; // Qué tan rápido parpadea
+        float timePassed = 0f;
+
+        while (timePassed < invulnerabilityDuration)
+        {
+            // Cambia a rojo
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(blinkInterval);
+
+            // Cambia a normal (blanco es el color por defecto que no altera el sprite)
+            spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(blinkInterval);
+
+            timePassed += blinkInterval * 2;
+        }
+
+        // Medida de seguridad: asegurar que siempre termine en su color normal
+        spriteRenderer.color = Color.white;
+        isInvulnerable = false;
+    }
+
+    private void Die()
+    {
+        Debug.Log("Eira ha sido derrotada.");
+        // Lógica de muerte: deshabilitar controles, mostrar pantalla de Game Over, etc.
+        this.enabled = false;
+    }
+    // ----------------------------------------
 
     private void CheckGrounded()
     {
@@ -152,13 +243,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Este método dibuja una esfera roja en el editor para que veas el GroundCheck
     private void OnDrawGizmosSelected()
     {
+        // Visualizar GroundCheck
         if (groundCheck != null)
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
+
+        // --- NUEVO: Visualizar AttackPoint ---
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         }
     }
 }
