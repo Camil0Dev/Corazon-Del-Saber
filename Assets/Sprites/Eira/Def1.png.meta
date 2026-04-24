@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: fe24f31445c368f4ca8615b1836d711b
+guid: 586415b44c414844ab2e6b39e2e7340d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7450315228272448636
-    second: Mob 1.2 Shadow of Doubt-Sombra de la Duda_0
-  - first:
-      213: 863216661080423603
-    second: Mob 1.2 Shadow of Doubt-Sombra de la Duda_1
-  - first:
-      213: 6568746802302328363
-    second: Mob 1.2 Shadow of Doubt-Sombra de la Duda_2
-  - first:
-      213: -168370141088987592
-    second: Mob 1.2 Shadow of Doubt-Sombra de la Duda_3
-  - first:
-      213: -3437075205008484742
-    second: Mob 1.2 Shadow of Doubt-Sombra de la Duda_4
+      213: 5766953294248266643
+    second: Def1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,10 +46,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -151,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mob 1.2 Shadow of Doubt-Sombra de la Duda_0
+      name: Def1_0
       rect:
         serializedVersion: 2
-        x: 145
-        y: 12
-        width: 328
-        height: 329
+        x: 0
+        y: 0
+        width: 65
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,96 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c74dcd50a36d46760800000000000000
-      internalID: 7450315228272448636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mob 1.2 Shadow of Doubt-Sombra de la Duda_1
-      rect:
-        serializedVersion: 2
-        x: 588
-        y: 14
-        width: 554
-        height: 321
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3bcb5efcaf2cafb00800000000000000
-      internalID: 863216661080423603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mob 1.2 Shadow of Doubt-Sombra de la Duda_2
-      rect:
-        serializedVersion: 2
-        x: 1209
-        y: 15
-        width: 366
-        height: 443
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b2e96baf960e82b50800000000000000
-      internalID: 6568746802302328363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mob 1.2 Shadow of Doubt-Sombra de la Duda_3
-      rect:
-        serializedVersion: 2
-        x: 1614
-        y: 15
-        width: 646
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 836cb9daf34d9adf0800000000000000
-      internalID: -168370141088987592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mob 1.2 Shadow of Doubt-Sombra de la Duda_4
-      rect:
-        serializedVersion: 2
-        x: 2323
-        y: 12
-        width: 361
-        height: 412
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a769a2bbf4e0d40d0800000000000000
-      internalID: -3437075205008484742
+      spriteID: 39bcfeb6775580050800000000000000
+      internalID: 5766953294248266643
       vertices: []
       indices: 
       edges: []
@@ -264,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -274,11 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mob 1.2 Shadow of Doubt-Sombra de la Duda_0: 7450315228272448636
-      Mob 1.2 Shadow of Doubt-Sombra de la Duda_1: 863216661080423603
-      Mob 1.2 Shadow of Doubt-Sombra de la Duda_2: 6568746802302328363
-      Mob 1.2 Shadow of Doubt-Sombra de la Duda_3: -168370141088987592
-      Mob 1.2 Shadow of Doubt-Sombra de la Duda_4: -3437075205008484742
+      Def1_0: 5766953294248266643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

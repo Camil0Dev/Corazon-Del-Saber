@@ -1,74 +1,86 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(SpriteRenderer))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Estadísticas de Movimiento")]
+    #region Variables: ConfiguraciÃ³n
+    [Header("Movimiento")]
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpForce = 16f;
-    [SerializeField][Range(0f, 1f)] private float jumpCutMultiplier = 0.5f;
-
-    [Header("Estadísticas de Gravedad")]
+    [SerializeField] private float jumpCutMultiplier = 0.5f;
     [SerializeField] private float fallMultiplier = 2.5f;
 
-    [Header("Estadísticas de Dash (Botas del Impulso)")]
+    [Header("Habilidades")]
     [SerializeField] private float dashSpeed = 20f;
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
 
-    [Header("Detección de Suelo")]
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float groundCheckRadius = 0.2f;
-
-    // --- NUEVO: SISTEMA DE COMBATE Y VIDA ---
     [Header("Combate")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRange = 0.5f;
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private float attackDamage = 10f;
-    [SerializeField] private float attackRate = 2f; // Cuántos ataques por segundo
-    private float nextAttackTime = 0f;
+    [SerializeField] private float attackRate = 2f;
 
-    [Header("Salud y Energía")]
+    [Header("Salud y Feedback")]
     [SerializeField] private float maxHealth = 100f;
-    private float currentHealth;
-    private bool isInvulnerable = false;
     [SerializeField] private float invulnerabilityDuration = 1f;
-    // ----------------------------------------
+    [SerializeField] private float knockbackForceX = 5f;
+    [SerializeField] private float knockbackForceY = 4f;
+    [SerializeField] private float knockbackDuration = 0.2f;
+    [SerializeField] private Image healthBarFill;
 
-    // Referencias y Estados
+    [Header("DetecciÃ³n")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundCheckRadius = 0.2f;
+    #endregion
+
+    #region Variables: Estado Interno
     private Rigidbody2D rb;
+    private Animator anim;
+    private SpriteRenderer sr;
     private PlayerControls controls;
-    private SpriteRenderer spriteRenderer; // <--- NUEVA REFERENCIA
-    private Vector2 moveInput;
-    private bool isGrounded;
 
-    // Variables de Dash
-    private bool canDash = true;
-    private bool isDashing;
+    private Vector2 moveInput;
+    private float currentHealth;
+    private float nextAttackTime;
     private float originalGravity;
     private int facingDirection = 1;
 
+    private bool isGrounded;
+    private bool canDash = true;
+    private bool isDashing;
+    private bool isAttacking;
+    private bool isKnockedBack;
+    private bool isInvulnerable;
+    private bool isDead;
+    #endregion
+
+    #region Ciclo de Vida e Input
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); // <--- ASIGNACIÓN
-        originalGravity = rb.gravityScale;
-        controls = new PlayerControls();
+        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
 
-        // Inicializar Vida
+        originalGravity = rb.gravityScale;
         currentHealth = maxHealth;
 
-        // Suscripciones al New Input System
-        controls.Gameplay.Jump.performed += ctx => Jump();
-        controls.Gameplay.Jump.canceled += ctx => JumpCancel();
-        controls.Gameplay.Dash.performed += ctx => StartDash();
+        SetupInputSystem();
+    }
 
-        // --- NUEVO: Suscripción del botón de ataque ---
-        controls.Gameplay.Attack.performed += ctx => Attack();
+    private void SetupInputSystem()
+    {
+        controls = new PlayerControls();
+
+        controls.Gameplay.Jump.performed += _ => Jump();
+        controls.Gameplay.Jump.canceled += _ => JumpCancel();
+        controls.Gameplay.Dash.performed += _ => StartDash();
+        controls.Gameplay.Attack.performed += _ => Attack();
     }
 
     private void OnEnable() => controls.Enable();
@@ -76,77 +88,87 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isDashing) return;
+        if (isDead) return;
 
-        moveInput = controls.Gameplay.Move.ReadValue<Vector2>();
+        HandleInputState();
         CheckGrounded();
+        UpdateAnimations();
+        UpdateHUD();
     }
 
     private void FixedUpdate()
     {
-        if (isDashing) return;
+        if (isDead || isDashing || isKnockedBack || isAttacking) return;
 
         ApplyMovement();
         ApplyGravity();
     }
 
-    private void ApplyMovement()
+    private void HandleInputState()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
-
-        if (moveInput.x > 0)
+        if (!isDashing && !isKnockedBack && !isAttacking)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            facingDirection = 1;
-        }
-        else if (moveInput.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-            facingDirection = -1;
-        }
-    }
-
-    private void ApplyGravity()
-    {
-        if (rb.linearVelocity.y < 0)
-        {
-            rb.gravityScale = originalGravity * fallMultiplier;
+            moveInput = controls.Gameplay.Move.ReadValue<Vector2>();
+            FlipController();
         }
         else
         {
-            rb.gravityScale = originalGravity;
+            moveInput = Vector2.zero;
         }
+    }
+    #endregion
+
+    #region LÃ³gica: Movimiento y Salto
+    private void ApplyMovement()
+    {
+        rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
     }
 
     private void Jump()
     {
-        if (isGrounded)
+        if (isGrounded && !isAttacking && !isDead)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            anim.SetTrigger("jump");
         }
     }
 
     private void JumpCancel()
     {
         if (rb.linearVelocity.y > 0)
-        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
-        }
     }
 
+    private void ApplyGravity()
+    {
+        rb.gravityScale = (rb.linearVelocity.y < -0.1f) ? originalGravity * fallMultiplier : originalGravity;
+    }
+
+    private void FlipController()
+    {
+        if (moveInput.x == 0) return;
+
+        int newDir = moveInput.x > 0 ? 1 : -1;
+        if (newDir != facingDirection)
+        {
+            facingDirection = newDir;
+            transform.rotation = Quaternion.Euler(0, facingDirection == 1 ? 0 : 180, 0);
+        }
+    }
+    #endregion
+
+    #region LÃ³gica: Dash
     private void StartDash()
     {
-        if (canDash)
-        {
-            StartCoroutine(DashRoutine());
-        }
+        if (canDash && !isAttacking && !isDead) StartCoroutine(DashRoutine());
     }
 
     private IEnumerator DashRoutine()
     {
         canDash = false;
         isDashing = true;
+        anim.SetTrigger("dash");
 
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0f);
@@ -159,104 +181,138 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
+    #endregion
 
-    // --- NUEVOS MÉTODOS DE COMBATE Y VIDA ---
+    #region LÃ³gica: Combate
     private void Attack()
     {
-        // Control de cooldown del ataque
-        if (Time.time < nextAttackTime) return;
+        if (Time.time < nextAttackTime || isDashing || isDead) return;
 
-        Debug.Log("Eira ataca");
+        // "Coyote bounce": Impulso ligero si ataca cayendo
+        if (!isGrounded && rb.linearVelocity.y < 0)
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 2f);
 
-        // Detectar enemigos en rango
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        isAttacking = true;
+        rb.linearVelocity = Vector2.zero;
 
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            // Verificamos si el objeto tocado tiene el script "Enemy"
-            if (enemy.TryGetComponent<Enemy>(out Enemy enemyComponent))
-            {
-                enemyComponent.TakeDamage(attackDamage);
-            }
-        }
+        anim.SetTrigger("attack");
+        anim.Update(0);
 
-        // Calcular cuándo podemos volver a atacar
         nextAttackTime = Time.time + 1f / attackRate;
+        StartCoroutine(EndAttackRoutine(0.35f));
     }
 
-    public void TakeDamage(float damage)
+    private IEnumerator EndAttackRoutine(float delay)
     {
-        if (isInvulnerable) return;
+        yield return new WaitForSeconds(delay);
+        isAttacking = false;
+    }
 
-        currentHealth -= damage;
-        Debug.Log($"Eira ha recibido daño. Salud restante: {currentHealth}");
-
-        if (currentHealth <= 0)
+    public void HitTarget() // Llamado por Animation Event
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in enemies)
         {
-            Die();
+            if (enemy.TryGetComponent<Enemy>(out Enemy target))
+                target.TakeDamage(attackDamage, transform);
         }
+    }
+    #endregion
+
+    #region LÃ³gica: Salud y DaÃ±o
+    public void TakeDamage(float damage, Transform source = null)
+    {
+        if (isInvulnerable || isDashing || isDead) return;
+
+        currentHealth = Mathf.Max(0, currentHealth - damage);
+
+        if (currentHealth <= 0) Die();
         else
         {
             StartCoroutine(InvulnerabilityRoutine());
+            StartCoroutine(KnockbackRoutine(source));
         }
+    }
+
+    private void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        UpdateHUD();
+        anim.SetTrigger("die");
+
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        rb.gravityScale = originalGravity;
+
+        controls.Disable();
+        gameObject.layer = 2; // Capa Ignore Raycast/Default para no molestar enemigos
+
+        StartCoroutine(DeathSequenceRoutine());
+    }
+
+    private IEnumerator DeathSequenceRoutine()
+    {
+        yield return new WaitForSeconds(1.8f);
+        gameObject.SetActive(false);
     }
 
     private IEnumerator InvulnerabilityRoutine()
     {
         isInvulnerable = true;
-
-        // Efecto visual: Parpadeo en rojo durante el tiempo de invulnerabilidad
-        float blinkInterval = 0.1f; // Qué tan rápido parpadea
-        float timePassed = 0f;
-
-        while (timePassed < invulnerabilityDuration)
+        float elapsed = 0f;
+        while (elapsed < invulnerabilityDuration)
         {
-            // Cambia a rojo
-            spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(blinkInterval);
-
-            // Cambia a normal (blanco es el color por defecto que no altera el sprite)
-            spriteRenderer.color = Color.white;
-            yield return new WaitForSeconds(blinkInterval);
-
-            timePassed += blinkInterval * 2;
+            sr.color = new Color(1, 1, 1, 0.5f);
+            yield return new WaitForSeconds(0.1f);
+            sr.color = Color.white;
+            yield return new WaitForSeconds(0.1f);
+            elapsed += 0.2f;
         }
-
-        // Medida de seguridad: asegurar que siempre termine en su color normal
-        spriteRenderer.color = Color.white;
         isInvulnerable = false;
     }
 
-    private void Die()
+    private IEnumerator KnockbackRoutine(Transform source)
     {
-        Debug.Log("Eira ha sido derrotada.");
-        // Lógica de muerte: deshabilitar controles, mostrar pantalla de Game Over, etc.
-        this.enabled = false;
-    }
-    // ----------------------------------------
+        isKnockedBack = true;
+        rb.linearVelocity = Vector2.zero;
 
+        int dir = (source != null && source.position.x > transform.position.x) ? -1 : 1;
+        rb.AddForce(new Vector2(knockbackForceX * dir, knockbackForceY), ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(knockbackDuration);
+        isKnockedBack = false;
+    }
+    #endregion
+
+    #region Auxiliares
     private void CheckGrounded()
     {
-        if (groundCheck != null)
-        {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        }
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
+    private void UpdateAnimations()
+    {
+        if (isDead) return;
+
+        anim.SetFloat("speed", Mathf.Abs(moveInput.x));
+        anim.SetBool("isGrounded", isGrounded);
+        anim.SetFloat("yVelocity", rb.linearVelocity.y);
+        anim.SetBool("isDashing", isDashing);
+    }
+
+    private void UpdateHUD()
+    {
+        if (healthBarFill != null)
+            healthBarFill.fillAmount = currentHealth / maxHealth;
     }
 
     private void OnDrawGizmosSelected()
     {
-        // Visualizar GroundCheck
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        }
-
-        // --- NUEVO: Visualizar AttackPoint ---
-        if (attackPoint != null)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        }
+        Gizmos.color = Color.red;
+        if (groundCheck) Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        Gizmos.color = Color.yellow;
+        if (attackPoint) Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    #endregion
 }

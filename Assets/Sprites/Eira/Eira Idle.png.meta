@@ -1,0 +1,808 @@
+fileFormatVersion: 2
+guid: 71639c1e0df16134bb6cb3951499d55c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1169680651582570147
+    second: Eira Idle_0
+  - first:
+      213: -2259138570478931248
+    second: Eira Idle_1
+  - first:
+      213: 7746647845243977886
+    second: Eira Idle_2
+  - first:
+      213: 6475330332399554939
+    second: Eira Idle_3
+  - first:
+      213: -8883098460161501562
+    second: Eira Idle_4
+  - first:
+      213: 4879437769998134646
+    second: Eira Idle_5
+  - first:
+      213: 8591448167177924845
+    second: Eira Idle_6
+  - first:
+      213: -405545692260174092
+    second: Eira Idle_7
+  - first:
+      213: 4393237221543793816
+    second: Eira Idle_8
+  - first:
+      213: -1845690527670765751
+    second: Eira Idle_9
+  - first:
+      213: 1413613533027647873
+    second: Eira Idle_10
+  - first:
+      213: -1365635481432544394
+    second: Eira Idle_11
+  - first:
+      213: 917263760154694324
+    second: Eira Idle_12
+  - first:
+      213: -836376174561888639
+    second: Eira Idle_13
+  - first:
+      213: -3025170765112330891
+    second: Eira Idle_14
+  - first:
+      213: -4679848825943032155
+    second: Eira Idle_15
+  - first:
+      213: 3239744448042584669
+    second: Eira Idle_16
+  - first:
+      213: 7973482170023613688
+    second: Eira Idle_17
+  - first:
+      213: -3438971729127802916
+    second: Eira Idle_18
+  - first:
+      213: 4828651789840669429
+    second: Eira Idle_19
+  - first:
+      213: 197839335190213018
+    second: Eira Idle_20
+  - first:
+      213: -5230755647147801894
+    second: Eira Idle_21
+  - first:
+      213: -6181732471441234151
+    second: Eira Idle_22
+  - first:
+      213: 5983328309282273687
+    second: Eira Idle_23
+  - first:
+      213: 8151007272470454470
+    second: Eira Idle_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eira Idle_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 571
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5106c505a574cfe0800000000000000
+      internalID: -1169680651582570147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 571
+        width: 50
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d23838807de5a0e0800000000000000
+      internalID: -2259138570478931248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 571
+        width: 50
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9000d7fb2f918b60800000000000000
+      internalID: 7746647845243977886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 571
+        width: 50
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71dcf921aefcd950800000000000000
+      internalID: 6475330332399554939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_4
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 571
+        width: 51
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6861141e305e8b480800000000000000
+      internalID: -8883098460161501562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 429
+        width: 51
+        height: 138
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67dec58acce37b340800000000000000
+      internalID: 4879437769998134646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_6
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 429
+        width: 51
+        height: 138
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de032dea694fa3770800000000000000
+      internalID: 8591448167177924845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_7
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 429
+        width: 53
+        height: 138
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f674a077563f5af0800000000000000
+      internalID: -405545692260174092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_8
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 429
+        width: 53
+        height: 138
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89454240af9e7fc30800000000000000
+      internalID: 4393237221543793816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_9
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 429
+        width: 54
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94771e47e3ac266e0800000000000000
+      internalID: -1845690527670765751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 287
+        width: 54
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1814cc5c40a2e9310800000000000000
+      internalID: 1413613533027647873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 287
+        width: 54
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b2b8cd3c94c0de0800000000000000
+      internalID: -1365635481432544394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 287
+        width: 54
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b21c5da786cabc00800000000000000
+      internalID: 917263760154694324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_13
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 287
+        width: 53
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18673a0fc489464f0800000000000000
+      internalID: -836376174561888639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_14
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 287
+        width: 52
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5753598973f6406d0800000000000000
+      internalID: -3025170765112330891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 145
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aef227a946dd0fb0800000000000000
+      internalID: -4679848825943032155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_16
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 145
+        width: 50
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a4f9c1962e5fc20800000000000000
+      internalID: 3239744448042584669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_17
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 145
+        width: 50
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f41b2fc9cf77ae60800000000000000
+      internalID: 7973482170023613688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_18
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 145
+        width: 49
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7f9bcce615640d0800000000000000
+      internalID: -3438971729127802916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_19
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 145
+        width: 50
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fad1853831d20340800000000000000
+      internalID: 4828651789840669429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 3
+        width: 50
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91bc90c3dddeb200800000000000000
+      internalID: 197839335190213018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_21
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 3
+        width: 50
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad203e0e37f9867b0800000000000000
+      internalID: -5230755647147801894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_22
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 3
+        width: 50
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9176f37c113163aa0800000000000000
+      internalID: -6181732471441234151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_23
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 3
+        width: 50
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799fe41756d090350800000000000000
+      internalID: 5983328309282273687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Idle_24
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 3
+        width: 51
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c02a3dade13e1170800000000000000
+      internalID: 8151007272470454470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 553473373e6a5cf48acd2190e9f15715
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Eira Idle_0: -1169680651582570147
+      Eira Idle_1: -2259138570478931248
+      Eira Idle_10: 1413613533027647873
+      Eira Idle_11: -1365635481432544394
+      Eira Idle_12: 917263760154694324
+      Eira Idle_13: -836376174561888639
+      Eira Idle_14: -3025170765112330891
+      Eira Idle_15: -4679848825943032155
+      Eira Idle_16: 3239744448042584669
+      Eira Idle_17: 7973482170023613688
+      Eira Idle_18: -3438971729127802916
+      Eira Idle_19: 4828651789840669429
+      Eira Idle_2: 7746647845243977886
+      Eira Idle_20: 197839335190213018
+      Eira Idle_21: -5230755647147801894
+      Eira Idle_22: -6181732471441234151
+      Eira Idle_23: 5983328309282273687
+      Eira Idle_24: 8151007272470454470
+      Eira Idle_3: 6475330332399554939
+      Eira Idle_4: -8883098460161501562
+      Eira Idle_5: 4879437769998134646
+      Eira Idle_6: 8591448167177924845
+      Eira Idle_7: -405545692260174092
+      Eira Idle_8: 4393237221543793816
+      Eira Idle_9: -1845690527670765751
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

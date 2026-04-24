@@ -1,0 +1,574 @@
+fileFormatVersion: 2
+guid: d442a9cff0ccb0240b7ec69ed1b0ed8c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2916975094912965066
+    second: Eira Jump Alpha_0
+  - first:
+      213: -2883159203372018185
+    second: Eira Jump Alpha_1
+  - first:
+      213: -6211595586790692318
+    second: Eira Jump Alpha_2
+  - first:
+      213: -4227877109184511939
+    second: Eira Jump Alpha_3
+  - first:
+      213: 5562214444967770221
+    second: Eira Jump Alpha_4
+  - first:
+      213: -7558835476397229041
+    second: Eira Jump Alpha_5
+  - first:
+      213: 6922476379039421313
+    second: Eira Jump Alpha_6
+  - first:
+      213: 885699048970533691
+    second: Eira Jump Alpha_7
+  - first:
+      213: 321530499520373556
+    second: Eira Jump Alpha_8
+  - first:
+      213: -8475495981518576474
+    second: Eira Jump Alpha_9
+  - first:
+      213: -6986395167458583607
+    second: Eira Jump Alpha_10
+  - first:
+      213: -8695868279977444349
+    second: Eira Jump Alpha_11
+  - first:
+      213: -451138794131373793
+    second: Eira Jump Alpha_12
+  - first:
+      213: -5892933858687088827
+    second: Eira Jump Alpha_13
+  - first:
+      213: 8250229743184645448
+    second: Eira Jump Alpha_14
+  - first:
+      213: -3880843352643266659
+    second: Eira Jump Alpha_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eira Jump Alpha_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 566
+        width: 50
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6362d012b92d487d0800000000000000
+      internalID: -2916975094912965066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 566
+        width: 50
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f5dc1ceaf5fcf7d0800000000000000
+      internalID: -2883159203372018185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 566
+        width: 48
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ae4f869bafbc9a0800000000000000
+      internalID: -6211595586790692318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 566
+        width: 57
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d304d016b209355c0800000000000000
+      internalID: -4227877109184511939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 385
+        width: 73
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68b9dc5194f03d40800000000000000
+      internalID: 5562214444967770221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 385
+        width: 70
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0cf8b1ce2f991790800000000000000
+      internalID: -7558835476397229041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_6
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 385
+        width: 67
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1835da20793911060800000000000000
+      internalID: 6922476379039421313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_7
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 406
+        width: 50
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b3ac7a792aa4c00800000000000000
+      internalID: 885699048970533691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 232
+        width: 50
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433ad58294e467400800000000000000
+      internalID: 321530499520373556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_9
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 229
+        width: 50
+        height: 129
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4a5565f4df06a80800000000000000
+      internalID: -8475495981518576474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 223
+        width: 49
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb10275c965b0f90800000000000000
+      internalID: -6986395167458583607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_11
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 204
+        width: 68
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c7b5e3fd1125780800000000000000
+      internalID: -8695868279977444349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_12
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 23
+        width: 67
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11c66f28ab3db9f0800000000000000
+      internalID: -451138794131373793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_13
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 23
+        width: 53
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547851ca0e7183ea0800000000000000
+      internalID: -5892933858687088827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_14
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 23
+        width: 48
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d02e56d34be7270800000000000000
+      internalID: 8250229743184645448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Jump Alpha_15
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 23
+        width: 51
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9713c84889742ac0800000000000000
+      internalID: -3880843352643266659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2dbfcf079627f0049b5e82f66b64f5a4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Eira Jump Alpha_0: -2916975094912965066
+      Eira Jump Alpha_1: -2883159203372018185
+      Eira Jump Alpha_10: -6986395167458583607
+      Eira Jump Alpha_11: -8695868279977444349
+      Eira Jump Alpha_12: -451138794131373793
+      Eira Jump Alpha_13: -5892933858687088827
+      Eira Jump Alpha_14: 8250229743184645448
+      Eira Jump Alpha_15: -3880843352643266659
+      Eira Jump Alpha_2: -6211595586790692318
+      Eira Jump Alpha_3: -4227877109184511939
+      Eira Jump Alpha_4: 5562214444967770221
+      Eira Jump Alpha_5: -7558835476397229041
+      Eira Jump Alpha_6: 6922476379039421313
+      Eira Jump Alpha_7: 885699048970533691
+      Eira Jump Alpha_8: 321530499520373556
+      Eira Jump Alpha_9: -8475495981518576474
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

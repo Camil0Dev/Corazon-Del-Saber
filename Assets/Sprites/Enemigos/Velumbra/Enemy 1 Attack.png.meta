@@ -1,22 +1,37 @@
 fileFormatVersion: 2
-guid: 2841d1ddd00022640b2f09754edf65a2
+guid: 49e32f16bd50b2846bb94b4c6381c298
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 60917676794981704
-    second: Mob 1.3 Shadow of Doubt-Sombra de la Duda_0
+      213: -3293786406740570947
+    second: Enemy 1 Attack_0
   - first:
-      213: 6235101301302855393
-    second: Mob 1.3 Shadow of Doubt-Sombra de la Duda_1
+      213: 5886192825958803059
+    second: Enemy 1 Attack_1
   - first:
-      213: -2204755092567817618
-    second: Mob 1.3 Shadow of Doubt-Sombra de la Duda_2
+      213: -4269369884809140544
+    second: Enemy 1 Attack_2
   - first:
-      213: 1110021138746816592
-    second: Mob 1.3 Shadow of Doubt-Sombra de la Duda_3
+      213: -3639658672700418300
+    second: Enemy 1 Attack_3
   - first:
-      213: -3808310594149620505
-    second: Mob 1.3 Shadow of Doubt-Sombra de la Duda_4
+      213: -5806943515815171740
+    second: Enemy 1 Attack_4
+  - first:
+      213: 2404619685878024792
+    second: Enemy 1 Attack_5
+  - first:
+      213: -5832301105936421445
+    second: Enemy 1 Attack_6
+  - first:
+      213: -2777855533327486671
+    second: Enemy 1 Attack_7
+  - first:
+      213: 2764438094534879967
+    second: Enemy 1 Attack_8
+  - first:
+      213: 9103784206814342864
+    second: Enemy 1 Attack_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -151,13 +166,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mob 1.3 Shadow of Doubt-Sombra de la Duda_0
+      name: Enemy 1 Attack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 34
-        height: 33
+        width: 112
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84d28e5ed4c68d000800000000000000
-      internalID: 60917676794981704
+      spriteID: dbcc73cd6be1a42d0800000000000000
+      internalID: -3293786406740570947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mob 1.3 Shadow of Doubt-Sombra de la Duda_1
+      name: Enemy 1 Attack_1
       rect:
         serializedVersion: 2
-        x: 44
+        x: 191
         y: 0
-        width: 57
-        height: 32
+        width: 112
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e68bba3997878650800000000000000
-      internalID: 6235101301302855393
+      spriteID: 3762ab65035ffa150800000000000000
+      internalID: 5886192825958803059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mob 1.3 Shadow of Doubt-Sombra de la Duda_2
+      name: Enemy 1 Attack_2
       rect:
         serializedVersion: 2
-        x: 106
+        x: 383
         y: 0
-        width: 38
-        height: 44
+        width: 114
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +225,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6203c2bce22761e0800000000000000
-      internalID: -2204755092567817618
+      spriteID: 0c66339b5b620c4c0800000000000000
+      internalID: -4269369884809140544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mob 1.3 Shadow of Doubt-Sombra de la Duda_3
+      name: Enemy 1 Attack_3
       rect:
         serializedVersion: 2
-        x: 146
+        x: 575
         y: 0
-        width: 66
-        height: 40
+        width: 115
+        height: 134
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 058bd243856976f00800000000000000
-      internalID: 1110021138746816592
+      spriteID: 407950e88b55d7dc0800000000000000
+      internalID: -3639658672700418300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mob 1.3 Shadow of Doubt-Sombra de la Duda_4
+      name: Enemy 1 Attack_4
       rect:
         serializedVersion: 2
-        x: 217
+        x: 767
         y: 0
-        width: 36
-        height: 41
+        width: 114
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,8 +269,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e4ea5121b9262bc0800000000000000
-      internalID: -3808310594149620505
+      spriteID: 469241d83a7996fa0800000000000000
+      internalID: -5806943515815171740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1 Attack_5
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 0
+        width: 116
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85acba43ddcee5120800000000000000
+      internalID: 2404619685878024792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1 Attack_6
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 0
+        width: 171
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdaa858b018f0fa0800000000000000
+      internalID: -5832301105936421445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1 Attack_7
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 0
+        width: 173
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13179a23c131379d0800000000000000
+      internalID: -2777855533327486671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1 Attack_8
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 0
+        width: 146
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda2f44ecc14d5620800000000000000
+      internalID: 2764438094534879967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1 Attack_9
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 0
+        width: 137
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0deeafe8083275e70800000000000000
+      internalID: 9103784206814342864
       vertices: []
       indices: 
       edges: []
@@ -274,11 +399,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mob 1.3 Shadow of Doubt-Sombra de la Duda_0: 60917676794981704
-      Mob 1.3 Shadow of Doubt-Sombra de la Duda_1: 6235101301302855393
-      Mob 1.3 Shadow of Doubt-Sombra de la Duda_2: -2204755092567817618
-      Mob 1.3 Shadow of Doubt-Sombra de la Duda_3: 1110021138746816592
-      Mob 1.3 Shadow of Doubt-Sombra de la Duda_4: -3808310594149620505
+      Enemy 1 Attack_0: -3293786406740570947
+      Enemy 1 Attack_1: 5886192825958803059
+      Enemy 1 Attack_2: -4269369884809140544
+      Enemy 1 Attack_3: -3639658672700418300
+      Enemy 1 Attack_4: -5806943515815171740
+      Enemy 1 Attack_5: 2404619685878024792
+      Enemy 1 Attack_6: -5832301105936421445
+      Enemy 1 Attack_7: -2777855533327486671
+      Enemy 1 Attack_8: 2764438094534879967
+      Enemy 1 Attack_9: 9103784206814342864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

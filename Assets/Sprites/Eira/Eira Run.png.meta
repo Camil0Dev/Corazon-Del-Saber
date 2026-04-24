@@ -1,0 +1,1094 @@
+fileFormatVersion: 2
+guid: 1b17c1d71f3128042a0304ce30c96def
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6532105386874888303
+    second: Eira Run_0
+  - first:
+      213: 887580111680916712
+    second: Eira Run_1
+  - first:
+      213: -8492649412776899278
+    second: Eira Run_2
+  - first:
+      213: 6706104518031780914
+    second: Eira Run_3
+  - first:
+      213: 6025530865841461285
+    second: Eira Run_4
+  - first:
+      213: -6688407361712090106
+    second: Eira Run_5
+  - first:
+      213: 1684419850979371463
+    second: Eira Run_6
+  - first:
+      213: 6352988225409468593
+    second: Eira Run_7
+  - first:
+      213: 4123977512575610394
+    second: Eira Run_8
+  - first:
+      213: 7260853694986001894
+    second: Eira Run_9
+  - first:
+      213: 5956200102364731135
+    second: Eira Run_10
+  - first:
+      213: 7902591871548203609
+    second: Eira Run_11
+  - first:
+      213: -1016565879060290303
+    second: Eira Run_12
+  - first:
+      213: -9100810215896922570
+    second: Eira Run_13
+  - first:
+      213: 6326890795088994154
+    second: Eira Run_14
+  - first:
+      213: -4457178140634964197
+    second: Eira Run_15
+  - first:
+      213: 2652467094240975838
+    second: Eira Run_16
+  - first:
+      213: 8974511317115136921
+    second: Eira Run_17
+  - first:
+      213: 6667281183255238122
+    second: Eira Run_18
+  - first:
+      213: 4508493720594430448
+    second: Eira Run_19
+  - first:
+      213: 5929404605768243770
+    second: Eira Run_20
+  - first:
+      213: 8875517674670425696
+    second: Eira Run_21
+  - first:
+      213: -2494242442240565056
+    second: Eira Run_22
+  - first:
+      213: -1903633541247237836
+    second: Eira Run_23
+  - first:
+      213: -5534296320836188144
+    second: Eira Run_24
+  - first:
+      213: 2681318681422605165
+    second: Eira Run_25
+  - first:
+      213: -4947733079097471173
+    second: Eira Run_26
+  - first:
+      213: 6159334138400699101
+    second: Eira Run_27
+  - first:
+      213: 7685480669790986238
+    second: Eira Run_28
+  - first:
+      213: 974015128595875669
+    second: Eira Run_29
+  - first:
+      213: -5881446030829172320
+    second: Eira Run_30
+  - first:
+      213: 9081529547867851741
+    second: Eira Run_31
+  - first:
+      213: -7002008653037315930
+    second: Eira Run_32
+  - first:
+      213: 1623332665567343972
+    second: Eira Run_33
+  - first:
+      213: -3625206195577060614
+    second: Eira Run_34
+  - first:
+      213: -2694028846230418359
+    second: Eira Run_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eira Run_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 701
+        width: 51
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f60e714ad33b6aa50800000000000000
+      internalID: 6532105386874888303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 701
+        width: 52
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec4172b861515c00800000000000000
+      internalID: 887580111680916712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 701
+        width: 51
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23dc085ea5c042a80800000000000000
+      internalID: -8492649412776899278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_3
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 701
+        width: 57
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c2de7578ed01d50800000000000000
+      internalID: 6706104518031780914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_4
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 701
+        width: 58
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528d1a9d56cfe9350800000000000000
+      internalID: 6025530865841461285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_5
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 701
+        width: 70
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6041b04f0f00e23a0800000000000000
+      internalID: -6688407361712090106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 568
+        width: 85
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c9ed361ee2406710800000000000000
+      internalID: 1684419850979371463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_7
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 568
+        width: 84
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b845c5a1295a2850800000000000000
+      internalID: 6352988225409468593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_8
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 562
+        width: 80
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1ea4caa2bf4b3930800000000000000
+      internalID: 4123977512575610394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_9
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 561
+        width: 79
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed19b747fbb3c460800000000000000
+      internalID: 7260853694986001894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_10
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 561
+        width: 60
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff658909f6ca8a250800000000000000
+      internalID: 5956200102364731135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_11
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 561
+        width: 62
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 952258cff65abad60800000000000000
+      internalID: 7902591871548203609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 423
+        width: 73
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10524df08be64e1f0800000000000000
+      internalID: -1016565879060290303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_13
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 427
+        width: 78
+        height: 132
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636c739a35d63b180800000000000000
+      internalID: -9100810215896922570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_14
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 424
+        width: 78
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6fd7f528a1adc750800000000000000
+      internalID: 6326890795088994154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_15
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 422
+        width: 75
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f11d2a81ce422c0800000000000000
+      internalID: -4457178140634964197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_16
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 421
+        width: 62
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edb55a2d4c47fc420800000000000000
+      internalID: 2652467094240975838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_17
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 421
+        width: 63
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99bee517e7edb8c70800000000000000
+      internalID: 8974511317115136921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_18
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 281
+        width: 71
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae5139159e0f68c50800000000000000
+      internalID: 6667281183255238122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_19
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 287
+        width: 84
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f93c10e623619e30800000000000000
+      internalID: 4508493720594430448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_20
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 287
+        width: 83
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a9168d21a794250800000000000000
+      internalID: 5929404605768243770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_21
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 281
+        width: 82
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0668e64fc4c2c2b70800000000000000
+      internalID: 8875517674670425696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_22
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 280
+        width: 77
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c06c8eb6bba26dd0800000000000000
+      internalID: -2494242442240565056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_23
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 281
+        width: 63
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431807f416fe495e0800000000000000
+      internalID: -1903633541247237836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 142
+        width: 71
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018cec271da3233b0800000000000000
+      internalID: -5534296320836188144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_25
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 147
+        width: 83
+        height: 132
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b20df6225f53520800000000000000
+      internalID: 2681318681422605165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_26
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 145
+        width: 81
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3f02f09afe165bb0800000000000000
+      internalID: -4947733079097471173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_27
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 141
+        width: 74
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd27f4ce3c95a7550800000000000000
+      internalID: 6159334138400699101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_28
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 141
+        width: 64
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: effd50323ff48aa60800000000000000
+      internalID: 7685480669790986238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_29
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 141
+        width: 66
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55740d15995648d00800000000000000
+      internalID: 974015128595875669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 73
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9cbc60ff7e06ea0800000000000000
+      internalID: -5881446030829172320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_31
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 8
+        width: 84
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb80edf103180e70800000000000000
+      internalID: 9081529547867851741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_32
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 8
+        width: 83
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8df717a3ed3de90800000000000000
+      internalID: -7002008653037315930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_33
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1
+        width: 81
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465fd63657c378610800000000000000
+      internalID: 1623332665567343972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_34
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1
+        width: 75
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2851b1c2ea0bdc0800000000000000
+      internalID: -3625206195577060614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Run_35
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1
+        width: 56
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94cc7c5b903ec9ad0800000000000000
+      internalID: -2694028846230418359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 626e7984053e5cc42b039f053f911760
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Eira Run_0: 6532105386874888303
+      Eira Run_1: 887580111680916712
+      Eira Run_10: 5956200102364731135
+      Eira Run_11: 7902591871548203609
+      Eira Run_12: -1016565879060290303
+      Eira Run_13: -9100810215896922570
+      Eira Run_14: 6326890795088994154
+      Eira Run_15: -4457178140634964197
+      Eira Run_16: 2652467094240975838
+      Eira Run_17: 8974511317115136921
+      Eira Run_18: 6667281183255238122
+      Eira Run_19: 4508493720594430448
+      Eira Run_2: -8492649412776899278
+      Eira Run_20: 5929404605768243770
+      Eira Run_21: 8875517674670425696
+      Eira Run_22: -2494242442240565056
+      Eira Run_23: -1903633541247237836
+      Eira Run_24: -5534296320836188144
+      Eira Run_25: 2681318681422605165
+      Eira Run_26: -4947733079097471173
+      Eira Run_27: 6159334138400699101
+      Eira Run_28: 7685480669790986238
+      Eira Run_29: 974015128595875669
+      Eira Run_3: 6706104518031780914
+      Eira Run_30: -5881446030829172320
+      Eira Run_31: 9081529547867851741
+      Eira Run_32: -7002008653037315930
+      Eira Run_33: 1623332665567343972
+      Eira Run_34: -3625206195577060614
+      Eira Run_35: -2694028846230418359
+      Eira Run_4: 6025530865841461285
+      Eira Run_5: -6688407361712090106
+      Eira Run_6: 1684419850979371463
+      Eira Run_7: 6352988225409468593
+      Eira Run_8: 4123977512575610394
+      Eira Run_9: 7260853694986001894
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

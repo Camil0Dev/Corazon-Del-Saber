@@ -1,0 +1,1094 @@
+fileFormatVersion: 2
+guid: c1d53e39011e0b240af91a986663c0aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6006162284641609775
+    second: Eira Attack Alpha_0
+  - first:
+      213: -3669524281254749170
+    second: Eira Attack Alpha_1
+  - first:
+      213: -5969573102636699714
+    second: Eira Attack Alpha_2
+  - first:
+      213: 255177711617396237
+    second: Eira Attack Alpha_3
+  - first:
+      213: -4662690994980561271
+    second: Eira Attack Alpha_4
+  - first:
+      213: -8341890314530317862
+    second: Eira Attack Alpha_5
+  - first:
+      213: 5614805746007589407
+    second: Eira Attack Alpha_6
+  - first:
+      213: -7431816039572053564
+    second: Eira Attack Alpha_7
+  - first:
+      213: -7918402352184615547
+    second: Eira Attack Alpha_8
+  - first:
+      213: 95012907480184508
+    second: Eira Attack Alpha_9
+  - first:
+      213: 306083549122781159
+    second: Eira Attack Alpha_10
+  - first:
+      213: 4964923316596841719
+    second: Eira Attack Alpha_11
+  - first:
+      213: -8896741674267759862
+    second: Eira Attack Alpha_12
+  - first:
+      213: -7881912204507627950
+    second: Eira Attack Alpha_13
+  - first:
+      213: -3715651533484973896
+    second: Eira Attack Alpha_14
+  - first:
+      213: 8938422851199621730
+    second: Eira Attack Alpha_15
+  - first:
+      213: -776470095147986220
+    second: Eira Attack Alpha_16
+  - first:
+      213: -2853094217444417799
+    second: Eira Attack Alpha_17
+  - first:
+      213: -348991148394308968
+    second: Eira Attack Alpha_18
+  - first:
+      213: -7138111844604327385
+    second: Eira Attack Alpha_19
+  - first:
+      213: -3030750330336023323
+    second: Eira Attack Alpha_20
+  - first:
+      213: 242244080170036135
+    second: Eira Attack Alpha_21
+  - first:
+      213: -7754465957499504126
+    second: Eira Attack Alpha_22
+  - first:
+      213: 2034696655249847535
+    second: Eira Attack Alpha_23
+  - first:
+      213: -6398193734842528869
+    second: Eira Attack Alpha_24
+  - first:
+      213: 7775111734986710800
+    second: Eira Attack Alpha_25
+  - first:
+      213: 1468616089978150870
+    second: Eira Attack Alpha_26
+  - first:
+      213: 3561382214904933339
+    second: Eira Attack Alpha_27
+  - first:
+      213: -554220833293049005
+    second: Eira Attack Alpha_28
+  - first:
+      213: -4035785053485206027
+    second: Eira Attack Alpha_29
+  - first:
+      213: -7606366490158295892
+    second: Eira Attack Alpha_30
+  - first:
+      213: 661951763607722876
+    second: Eira Attack Alpha_31
+  - first:
+      213: -2544898170334361288
+    second: Eira Attack Alpha_32
+  - first:
+      213: -8912301939476687072
+    second: Eira Attack Alpha_33
+  - first:
+      213: 7963740265458325336
+    second: Eira Attack Alpha_34
+  - first:
+      213: -5912401987927388093
+    second: Eira Attack Alpha_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eira Attack Alpha_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 940
+        width: 52
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d796906933d5aca0800000000000000
+      internalID: -6006162284641609775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 940
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cd321bb1b331dc0800000000000000
+      internalID: -3669524281254749170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 940
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfec9c24e0d72da0800000000000000
+      internalID: -5969573102636699714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_3
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 940
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e4d87d6c29a8300800000000000000
+      internalID: 255177711617396237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_4
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 940
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e55ca7e3bca4fb0800000000000000
+      internalID: -4662690994980561271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_5
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 940
+        width: 52
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad91627c4f6ab3c80800000000000000
+      internalID: -8341890314530317862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_6
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 757
+        width: 52
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f12ca95d31ccbed40800000000000000
+      internalID: 5614805746007589407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_7
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 757
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1e14dffa2ecd890800000000000000
+      internalID: -7431816039572053564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_8
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 757
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58d1b61a30f2c1290800000000000000
+      internalID: -7918402352184615547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_9
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 757
+        width: 53
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6fe676cbd815100800000000000000
+      internalID: 95012907480184508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_10
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 757
+        width: 51
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efdd01cd5d6f3400800000000000000
+      internalID: 306083549122781159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_11
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 757
+        width: 52
+        height: 131
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc1fce7373f6e440800000000000000
+      internalID: 4964923316596841719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_12
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 574
+        width: 49
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b2bde859c688480800000000000000
+      internalID: -8896741674267759862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_13
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 574
+        width: 49
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25eb1833c92dd9290800000000000000
+      internalID: -7881912204507627950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_14
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 574
+        width: 75
+        height: 132
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b02e7ddd9a5f6cc0800000000000000
+      internalID: -3715651533484973896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_15
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 574
+        width: 105
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26adcf1b938ab0c70800000000000000
+      internalID: 8938422851199621730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_16
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 574
+        width: 108
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d29df7ff8c6935f0800000000000000
+      internalID: -776470095147986220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_17
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 574
+        width: 65
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe1182fce5c768d0800000000000000
+      internalID: -2853094217444417799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_18
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 391
+        width: 62
+        height: 159
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a933a4662282bf0800000000000000
+      internalID: -348991148394308968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_19
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 391
+        width: 60
+        height: 159
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ac95fb81550fc90800000000000000
+      internalID: -7138111844604327385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_20
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 391
+        width: 58
+        height: 157
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec6c65d1ac90f5d0800000000000000
+      internalID: -3030750330336023323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_21
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 391
+        width: 55
+        height: 153
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abe97b15bf9c5300800000000000000
+      internalID: 242244080170036135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_22
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 391
+        width: 55
+        height: 152
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20af16ceb4a926490800000000000000
+      internalID: -7754465957499504126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_23
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 391
+        width: 57
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4b7d1e3d1bc3c10800000000000000
+      internalID: 2034696655249847535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_24
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 208
+        width: 56
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bc49e72bc0537a0800000000000000
+      internalID: -6398193734842528869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_25
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 208
+        width: 63
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f9adcbdeeb6eb60800000000000000
+      internalID: 7775111734986710800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_26
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 208
+        width: 69
+        height: 153
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df12928d82916410800000000000000
+      internalID: 1468616089978150870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_27
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 208
+        width: 89
+        height: 138
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb6dc461429c6130800000000000000
+      internalID: 3561382214904933339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_28
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 208
+        width: 110
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3536278a6130f48f0800000000000000
+      internalID: -554220833293049005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_29
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 208
+        width: 106
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5fe2950e20ef7c0800000000000000
+      internalID: -4035785053485206027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_30
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 25
+        width: 90
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca41eaa3af1c07690800000000000000
+      internalID: -7606366490158295892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_31
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 25
+        width: 79
+        height: 133
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b18403f99bf2900800000000000000
+      internalID: 661951763607722876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_32
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 25
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839cda7f894beacd0800000000000000
+      internalID: -2544898170334361288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_33
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 25
+        width: 53
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027977efa94215480800000000000000
+      internalID: -8912301939476687072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_34
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 25
+        width: 51
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8575e16e393e48e60800000000000000
+      internalID: 7963740265458325336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eira Attack Alpha_35
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 25
+        width: 52
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 340564c97bde2fda0800000000000000
+      internalID: -5912401987927388093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 91958dee3157e024988b60ee84b72475
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Eira Attack Alpha_0: -6006162284641609775
+      Eira Attack Alpha_1: -3669524281254749170
+      Eira Attack Alpha_10: 306083549122781159
+      Eira Attack Alpha_11: 4964923316596841719
+      Eira Attack Alpha_12: -8896741674267759862
+      Eira Attack Alpha_13: -7881912204507627950
+      Eira Attack Alpha_14: -3715651533484973896
+      Eira Attack Alpha_15: 8938422851199621730
+      Eira Attack Alpha_16: -776470095147986220
+      Eira Attack Alpha_17: -2853094217444417799
+      Eira Attack Alpha_18: -348991148394308968
+      Eira Attack Alpha_19: -7138111844604327385
+      Eira Attack Alpha_2: -5969573102636699714
+      Eira Attack Alpha_20: -3030750330336023323
+      Eira Attack Alpha_21: 242244080170036135
+      Eira Attack Alpha_22: -7754465957499504126
+      Eira Attack Alpha_23: 2034696655249847535
+      Eira Attack Alpha_24: -6398193734842528869
+      Eira Attack Alpha_25: 7775111734986710800
+      Eira Attack Alpha_26: 1468616089978150870
+      Eira Attack Alpha_27: 3561382214904933339
+      Eira Attack Alpha_28: -554220833293049005
+      Eira Attack Alpha_29: -4035785053485206027
+      Eira Attack Alpha_3: 255177711617396237
+      Eira Attack Alpha_30: -7606366490158295892
+      Eira Attack Alpha_31: 661951763607722876
+      Eira Attack Alpha_32: -2544898170334361288
+      Eira Attack Alpha_33: -8912301939476687072
+      Eira Attack Alpha_34: 7963740265458325336
+      Eira Attack Alpha_35: -5912401987927388093
+      Eira Attack Alpha_4: -4662690994980561271
+      Eira Attack Alpha_5: -8341890314530317862
+      Eira Attack Alpha_6: 5614805746007589407
+      Eira Attack Alpha_7: -7431816039572053564
+      Eira Attack Alpha_8: -7918402352184615547
+      Eira Attack Alpha_9: 95012907480184508
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
