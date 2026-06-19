@@ -1,26 +1,27 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
-public class VelumbraAI : MonoBehaviour
+public class VelumbraAI : MonoBehaviour, IEnemyAI
 {
-    #region Variables: Configuraci髇
+    #region Variables: Configuraci贸n
     [Header("IA: Combate")]
     [SerializeField] private float chaseSpeed = 4f;
     [SerializeField] private float detectionRange = 6f;
     [SerializeField] private float attackRange = 1.2f;
     [SerializeField] private float attackCooldown = 1f;
+    [SerializeField] private LayerMask obstacleLayer; // NUEVO: Capa para detectar paredes/suelo
 
     [Header("IA: Wandering (Vagar)")]
     [SerializeField] private float wanderSpeed = 1.5f;
     [SerializeField] private float wanderRadius = 3f;
     [SerializeField] private float waitTimeAtEdge = 1.5f;
 
-    [Header("Combate: Da駉")]
+    [Header("Combate: Da帽o")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius = 0.5f;
     [SerializeField] private float attackDamage = 15f;
 
-    [Header("Detecci髇 de Suelo")]
+    [Header("Detecci贸n de Suelo")]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float edgeCheckOffset = 0.6f;
     [SerializeField] private float edgeCheckLength = 1f;
@@ -74,26 +75,49 @@ public class VelumbraAI : MonoBehaviour
     }
     #endregion
 
-    #region L骻ica de Comportamiento
+    #region L贸gica de Comportamiento
     private void HandleBehavior()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        // ESTO ES R脕PIDO
+        float sqrDistanceToPlayer = (transform.position - player.position).sqrMagnitude;
+        
+        bool canSeePlayer = CanSeePlayer(); 
 
-        if (distanceToPlayer <= attackRange)
+        // Multiplicamos los rangos por s铆 mismos para hacer una comparaci贸n justa
+        if (sqrDistanceToPlayer <= (attackRange * attackRange) && canSeePlayer) 
         {
             if (Time.time >= lastAttackTime + attackCooldown)
                 Attack();
             else
                 StopMovement();
         }
-        else if (distanceToPlayer <= detectionRange)
+        else if (sqrDistanceToPlayer <= (detectionRange * detectionRange) && canSeePlayer) 
         {
             ChasePlayer();
         }
         else
         {
-            Wander();
+            Wander(); 
         }
+    }
+
+    // NUEVO: Funci贸n que lanza el "l谩ser visual"
+    private bool CanSeePlayer()
+    {
+        if (player == null) return false;
+
+        // Sumamos un peque帽o offset (altura) en Y para que el rayo salga del pecho y no de los pies
+        Vector2 eyePosition = new Vector2(transform.position.x, transform.position.y + 0.5f);
+        Vector2 playerCenter = new Vector2(player.position.x, player.position.y + 0.5f);
+
+        Vector2 directionToPlayer = playerCenter - eyePosition;
+        float distance = directionToPlayer.magnitude;
+
+        // Lanzamos el rayo solo contra la capa de obst谩culos
+        RaycastHit2D hit = Physics2D.Raycast(eyePosition, directionToPlayer.normalized, distance, obstacleLayer);
+
+        // Si hit.collider es null, significa que el rayo lleg贸 a Eira sin chocar con ninguna pared
+        return hit.collider == null;
     }
 
     private void ChasePlayer()
@@ -164,8 +188,7 @@ public class VelumbraAI : MonoBehaviour
         anim.SetTrigger(AttackTrigger);
     }
 
-    // Llamado por Animation Event
-    public void PerformDamage()
+    public void PerformDamage() 
     {
         if (attackPoint == null) return;
 
@@ -179,8 +202,7 @@ public class VelumbraAI : MonoBehaviour
         }
     }
 
-    // Llamado por Animation Event
-    public void EndAttack() => isAttacking = false;
+    public void EndAttack() => isAttacking = false; 
     #endregion
 
     #region Helpers y Utilidades
@@ -194,8 +216,8 @@ public class VelumbraAI : MonoBehaviour
     private void HandleEdgeDetection(float currentDir)
     {
         StartWaiting(waitTimeAtEdge);
-        // Cambiar objetivo al lado opuesto
-        wanderTarget = new Vector2(transform.position.x + (-currentDir * wanderRadius), transform.position.y);
+        float safeX = transform.position.x + (-currentDir * wanderRadius);
+        wanderTarget = new Vector2(safeX, transform.position.y);
     }
 
     private void StartWaiting(float duration)
@@ -213,42 +235,54 @@ public class VelumbraAI : MonoBehaviour
     private void FlipSprite(float directionX)
     {
         if (directionX == 0) return;
-        // Rotaci髇 por Y para consistencia con PlayerController
         transform.rotation = Quaternion.Euler(0, directionX > 0 ? 180 : 0, 0);
     }
 
     private bool ShouldReturnToIdle() => player == null || !player.gameObject.activeInHierarchy;
-
-    private void PickNewWanderTargetOnEdge(float dirX)
-    {
-        isWaiting = true;
-        waitTimer = waitTimeAtEdge;
-        wanderTarget = new Vector2(transform.position.x + (-dirX * wanderRadius), transform.position.y);
-    }
     #endregion
 
     #region Gizmos
     private void OnDrawGizmosSelected()
     {
-        // Rangos de IA
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
-        // Punto de ataque
-        if (attackPoint != null)
-        {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
-        }
+        Vector2 center = Application.isPlaying ? startPosition : (Vector2)transform.position;
+        Gizmos.color = Color.cyan;
+        Vector3 leftBound = new Vector3(center.x - wanderRadius, center.y, 0);
+        Vector3 rightBound = new Vector3(center.x + wanderRadius, center.y, 0);
 
-        // Raycasts de precipicio
+        Gizmos.DrawLine(leftBound, rightBound);
+        Gizmos.DrawSphere(leftBound, 0.15f);
+        Gizmos.DrawSphere(rightBound, 0.15f);
+
         Gizmos.color = Color.green;
         Vector2 rO = new Vector2(transform.position.x + edgeCheckOffset, transform.position.y);
         Vector2 lO = new Vector2(transform.position.x - edgeCheckOffset, transform.position.y);
         Gizmos.DrawLine(rO, rO + Vector2.down * edgeCheckLength);
         Gizmos.DrawLine(lO, lO + Vector2.down * edgeCheckLength);
+
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        }
+        
+        // NUEVO GIZMO: Dibuja la l铆nea de visi贸n si el juego est谩 en marcha
+        if (Application.isPlaying && player != null)
+        {
+            Vector2 eyePosition = new Vector2(transform.position.x, transform.position.y + 0.5f);
+            Vector2 playerCenter = new Vector2(player.position.x, player.position.y + 0.5f);
+            
+            Gizmos.color = CanSeePlayer() ? Color.blue : Color.gray;
+            Gizmos.DrawLine(eyePosition, playerCenter);
+        }
     }
     #endregion
+    public void ToggleAI(bool isEnabled)
+    {
+        this.enabled = isEnabled;
+    }
 }

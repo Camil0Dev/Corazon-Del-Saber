@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     #region Variables: Configuración
     [Header("Movimiento")]
     [SerializeField] private float speed = 8f;
-    [SerializeField] private float jumpForce = 16f;
+    [SerializeField] private float jumpForce = 12f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
     [SerializeField] private float fallMultiplier = 2.5f;
 
@@ -20,23 +20,23 @@ public class PlayerController : MonoBehaviour
 
     [Header("Combate")]
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private float attackRange = 1.4f;
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackRate = 2f;
 
     [Header("Salud y Feedback")]
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private float invulnerabilityDuration = 1f;
-    [SerializeField] private float knockbackForceX = 5f;
-    [SerializeField] private float knockbackForceY = 4f;
-    [SerializeField] private float knockbackDuration = 0.2f;
+    [SerializeField] private float invulnerabilityDuration = 0.5f;
+    [SerializeField] private float knockbackForceX = 2f;
+    [SerializeField] private float knockbackForceY = 1f;
+    [SerializeField] private float knockbackDuration = 0.1f;
     [SerializeField] private Image healthBarFill;
 
     [Header("Detección")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private float groundCheckRadius = 0.27f;
     #endregion
 
     #region Variables: Estado Interno
@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour
     private bool isKnockedBack;
     private bool isInvulnerable;
     private bool isDead;
+    private Bench currentBench;
+
     #endregion
 
     #region Ciclo de Vida e Input
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
         controls.Gameplay.Jump.canceled += _ => JumpCancel();
         controls.Gameplay.Dash.performed += _ => StartDash();
         controls.Gameplay.Attack.performed += _ => Attack();
+        controls.Gameplay.Interact.performed += _ => Interact();
     }
 
     private void OnEnable() => controls.Enable();
@@ -114,6 +117,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             moveInput = Vector2.zero;
+        }
+    }
+
+    private void Interact()
+    {
+        if (currentBench != null)
+        {
+            currentBench.ActivateBench(gameObject);
         }
     }
     #endregion
@@ -208,7 +219,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = false;
     }
 
-    public void HitTarget() // Llamado por Animation Event
+    public void HitTarget() 
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in enemies)
@@ -313,6 +324,18 @@ public class PlayerController : MonoBehaviour
         if (groundCheck) Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         Gizmos.color = Color.yellow;
         if (attackPoint) Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    #endregion
+
+    #region Bench
+    public void SetCurrentBench(Bench bench)
+    {
+    currentBench = bench;
+    }
+
+    public void ClearCurrentBench()
+    {
+        currentBench = null;
     }
     #endregion
 }
