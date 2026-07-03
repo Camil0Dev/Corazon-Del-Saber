@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2e5fa6cd904924c98668867879e326, type: 3}
+  m_Name: BossData_Default
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  maxHealth: 100
+  moveSpeed: 3
+  detectionRange: 5
+  attackRange: 6
+  groundY: 0
+  attackCooldown: 3
+  attackDamage: 15
+  attackDuration: 1.3
+  attackPointRadius: 1.5
+  awakeDuration: 4

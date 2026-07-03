@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -60,6 +60,15 @@ public class PlayerController : MonoBehaviour
     private bool isDead;
     private Bench currentBench;
 
+    // 🔹 CACHÉ DE ANIMACIONES (Optimización)
+    private readonly int AnimSpeed = Animator.StringToHash("speed");
+    private readonly int AnimIsGrounded = Animator.StringToHash("isGrounded");
+    private readonly int AnimYVelocity = Animator.StringToHash("yVelocity");
+    private readonly int AnimIsDashing = Animator.StringToHash("isDashing");
+    private readonly int AnimJump = Animator.StringToHash("jump");
+    private readonly int AnimDash = Animator.StringToHash("dash");
+    private readonly int AnimAttack = Animator.StringToHash("attack");
+    private readonly int AnimDie = Animator.StringToHash("die");
     #endregion
 
     #region Ciclo de Vida e Input
@@ -71,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
         originalGravity = rb.gravityScale;
         currentHealth = maxHealth;
+
+        UpdateHUD(); // 🔹 Llamar solo al iniciar, no en Update
 
         SetupInputSystem();
     }
@@ -96,7 +107,6 @@ public class PlayerController : MonoBehaviour
         HandleInputState();
         CheckGrounded();
         UpdateAnimations();
-        UpdateHUD();
     }
 
     private void FixedUpdate()
@@ -120,13 +130,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Interact()
-    {
-        if (currentBench != null)
-        {
-            currentBench.ActivateBench(gameObject);
-        }
-    }
+    private void Interact() => currentBench?.ActivateBench(gameObject);
     #endregion
 
     #region Lógica: Movimiento y Salto
@@ -141,7 +145,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            anim.SetTrigger("jump");
+            anim.SetTrigger(AnimJump); // 🔹 Usando el Hash
         }
     }
 
@@ -179,7 +183,7 @@ public class PlayerController : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        anim.SetTrigger("dash");
+        anim.SetTrigger(AnimDash);
 
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0f);
@@ -199,14 +203,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Time.time < nextAttackTime || isDashing || isDead) return;
 
-        // "Coyote bounce": Impulso ligero si ataca cayendo
         if (!isGrounded && rb.linearVelocity.y < 0)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 2f);
 
         isAttacking = true;
         rb.linearVelocity = Vector2.zero;
 
-        anim.SetTrigger("attack");
+        anim.SetTrigger(AnimAttack);
         anim.Update(0);
 
         nextAttackTime = Time.time + 1f / attackRate;
@@ -219,13 +222,21 @@ public class PlayerController : MonoBehaviour
         isAttacking = false;
     }
 
-    public void HitTarget() 
+    public void HitTarget()
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        foreach (Collider2D enemy in enemies)
+        Collider2D[] targets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D target in targets)
         {
-            if (enemy.TryGetComponent<Enemy>(out Enemy target))
-                target.TakeDamage(attackDamage, transform);
+            if (target.TryGetComponent<Enemy>(out Enemy enemy))
+            {
+                enemy.TakeDamage(attackDamage, transform);
+            }
+
+            if (target.TryGetComponent<BossHealth>(out BossHealth bossHealth))
+            {
+                bossHealth.TakeDamage((int)attackDamage);
+            }
         }
     }
     #endregion
@@ -236,6 +247,7 @@ public class PlayerController : MonoBehaviour
         if (isInvulnerable || isDashing || isDead) return;
 
         currentHealth = Mathf.Max(0, currentHealth - damage);
+        UpdateHUD(); // 🔹 Llamamos a la UI solo cuando recibe daño
 
         if (currentHealth <= 0) Die();
         else
@@ -250,14 +262,16 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        StopAllCoroutines(); // 🔹 Seguridad: detiene Dash, Knockback, etc. inmediatamente
+
         UpdateHUD();
-        anim.SetTrigger("die");
+        anim.SetTrigger(AnimDie);
 
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         rb.gravityScale = originalGravity;
 
         controls.Disable();
-        gameObject.layer = 2; // Capa Ignore Raycast/Default para no molestar enemigos
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast"); // 🔹 Eliminado el número mágico
 
         StartCoroutine(DeathSequenceRoutine());
     }
@@ -306,10 +320,10 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
-        anim.SetFloat("speed", Mathf.Abs(moveInput.x));
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetFloat("yVelocity", rb.linearVelocity.y);
-        anim.SetBool("isDashing", isDashing);
+        anim.SetFloat(AnimSpeed, Mathf.Abs(moveInput.x));
+        anim.SetBool(AnimIsGrounded, isGrounded);
+        anim.SetFloat(AnimYVelocity, rb.linearVelocity.y);
+        anim.SetBool(AnimIsDashing, isDashing);
     }
 
     private void UpdateHUD()
@@ -325,17 +339,12 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         if (attackPoint) Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+
+    public float GetCurrentHealth() => currentHealth;
     #endregion
 
     #region Bench
-    public void SetCurrentBench(Bench bench)
-    {
-    currentBench = bench;
-    }
-
-    public void ClearCurrentBench()
-    {
-        currentBench = null;
-    }
+    public void SetCurrentBench(Bench bench) => currentBench = bench;
+    public void ClearCurrentBench() => currentBench = null;
     #endregion
 }

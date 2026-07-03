@@ -32,7 +32,7 @@ TagManager:
   - FrontDecoration
   - Effects
   - UI
-  - 
+  - Boss
   - 
   - 
   - 
@@ -54,6 +54,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 1877778129
+    locked: 0
+  - name: Enemy
+    uniqueID: 2107892211
     locked: 0
   m_RenderingLayers:
   - Default
