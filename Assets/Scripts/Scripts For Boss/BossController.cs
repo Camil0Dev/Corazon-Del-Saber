@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class BossController : MonoBehaviour
@@ -14,8 +15,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private float _attackRadius = 1.5f;
 
-    // 🔹 EVENTO QUE SE DISPARA CUANDO EL BOSS DESPIERTA
-    public System.Action OnBossAwaken;
+    public Action OnBossAwaken;
 
     private BossStateMachine _stateMachine;
     private BossMovement _movement;
@@ -40,19 +40,16 @@ public class BossController : MonoBehaviour
         ResetAnimatorParameters();
 
         if (_player == null)
-            _player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        {
+            var playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null) _player = playerObj.transform;
+        }
 
-        if (_spriteTransform == null)
-            _spriteTransform = transform;
+        if (_spriteTransform == null) _spriteTransform = transform;
+        
+        if (_trigger == null) _trigger = GetComponentInChildren<BossTrigger>();
 
-        if (_trigger == null)
-            _trigger = GetComponentInChildren<BossTrigger>();
-
-        if (_trigger == null)
-            Debug.LogError("¡BossTrigger no encontrado! Asigna manualmente el GameObject con el script.");
-
-        if (_attackPoint == null)
-            _attackPoint = transform;
+        if (_attackPoint == null) _attackPoint = transform;
 
         _movement = new BossMovement(_rb, transform, _data.moveSpeed, _spriteTransform, _spriteDefaultFacingRight);
         _attack = new BossAttack(_data.attackCooldown, _data.attackDamage, _player, transform, _attackPoint, _attackRadius);
@@ -81,94 +78,27 @@ public class BossController : MonoBehaviour
     private void Update() => _stateMachine.Update();
     private void FixedUpdate() => _stateMachine.FixedUpdate();
 
-    // 🔹 MÉTODO PARA FORZAR UNA ANIMACIÓN ESPECÍFICA
     public void ForceAnimation(string stateName, float normalizedTime = 0f, int layer = 0)
     {
         _animator.Play(stateName, layer, normalizedTime);
-        Debug.Log($"🎬 Forzando animación: {stateName}");
     }
 
-    // 🔹 MÉTODO PARA ACTUALIZAR PARÁMETROS Y FORZAR TRANSICIÓN
-    public void TransitionToAnimation(string stateName, string boolParam, bool value)
-    {
-        _animator.SetBool(boolParam, value);
-        ForceAnimation(stateName);
-        Debug.Log($"🔄 Transición forzada a: {stateName} ( {boolParam} = {value} )");
-    }
-
-    // 🔹 MÉTODO PARA MATAR AL BOSS
     public void Die() => _stateMachine.ChangeState<DeathState>();
 
-    // 🔹 MÉTODO PARA DISPARAR EL EVENTO DE DESPERTAR
-    public void TriggerBossAwaken()
-    {
-        Debug.Log("🔊 ¡Boss despierto! Notificando a la UI...");
-        OnBossAwaken?.Invoke();
-    }
+    public void TriggerBossAwaken() => OnBossAwaken?.Invoke();
 
-    // 🔹 MÉTODO PARA VERIFICAR SI EL JUGADOR ESTÁ EN EL ÁREA DE ATAQUE
     public bool IsPlayerInAttackRange()
     {
-        if (_player == null)
-        {
-            Debug.LogWarning("❌ Player es NULL en BossController");
-            return false;
-        }
-
-        float distance = Vector2.Distance(_attackPoint.position, _player.position);
-        bool inRange = distance <= _attackRadius;
-
-        if (Time.frameCount % 30 == 0)
-        {
-            Debug.Log($"📏 Distancia al jugador: {distance:F2} | Radio de ataque: {_attackRadius} | ¿En rango? {inRange}");
-        }
-
-        return inRange;
+        if (_player == null) return false;
+        return Vector2.Distance(_attackPoint.position, _player.position) <= _attackRadius;
     }
 
-    // 🔹 MÉTODO PARA APLICAR DAÑO AL JUGADOR (LLAMADO DESDE ANIMATION EVENT)
+    // 🔹 Se simplificó usando la lógica que YA existe en tu módulo BossAttack
     public void ApplyDamageToPlayer()
     {
-        if (_player == null)
-        {
-            Debug.LogWarning("❌ Player es NULL en ApplyDamageToPlayer");
-            return;
-        }
-
-        float distance = Vector2.Distance(_attackPoint.position, _player.position);
-        Debug.Log($"💥 Aplicando daño: Distancia = {distance:F2} | Radio = {_attackRadius}");
-
-        if (distance <= _attackRadius)
-        {
-            PlayerController playerController = _player.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                playerController.TakeDamage(_data.attackDamage, transform);
-                Debug.Log($"💥 ¡Jugador recibe {_data.attackDamage} de daño! Vida restante: {playerController.GetCurrentHealth()}");
-            }
-            else
-            {
-                Debug.LogWarning("❌ El jugador no tiene componente PlayerController");
-            }
-        }
-        else
-        {
-            Debug.Log($"❌ Jugador fuera del área de ataque (Distancia: {distance:F2} > {_attackRadius})");
-        }
+        _attack.ApplyDamage();
     }
 
-    // 🔹 MÉTODO DE DIAGNÓSTICO PARA VER PARÁMETROS DEL ANIMATOR
-    public void DebugAnimatorParameters()
-    {
-        Debug.Log($"📊 Animator Params - Dormant: {_animator.GetBool("IsDormant")}, " +
-                  $"Awake: {_animator.GetBool("IsAwake")}, " +
-                  $"Idle: {_animator.GetBool("IsIdle")}, " +
-                  $"Walking: {_animator.GetBool("IsWalking")}, " +
-                  $"Attacking: {_animator.GetBool("IsAttacking")}, " +
-                  $"Dead: {_animator.GetBool("IsDead")}");
-    }
-
-    // 🔹 DIBUJAR EL GIZMO DE ATAQUE EN EL EDITOR
     private void OnDrawGizmosSelected()
     {
         if (_attackPoint == null) return;
