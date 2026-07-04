@@ -7,8 +7,8 @@ public class BossAttack
     private float _lastAttackTime;
     private Transform _player;
     private Transform _bossTransform;
-    private Transform _attackPoint; // 🔹 NUEVO: Punto de ataque
-    private float _attackRadius;    // 🔹 NUEVO: Radio de ataque
+    private Transform _attackPoint;
+    private float _attackRadius;
 
     public BossAttack(float cooldown, int damage, Transform player, Transform bossTransform, Transform attackPoint, float attackRadius)
     {
@@ -25,47 +25,19 @@ public class BossAttack
 
     public void PerformAttack()
     {
-        if (!CanAttack())
-        {
-            Debug.Log("⏳ Ataque en cooldown");
-            return;
-        }
-
+        if (!CanAttack()) return;
         _lastAttackTime = Time.time;
-        Debug.Log($"⚔️ ¡Boss ataca! Daño: {_damage}");
-
-        // 🔹 AHORA EL DAÑO SE APLICA DESDE EL ANIMATION EVENT
-        // Este método solo registra el ataque y actualiza el cooldown
     }
 
-    // 🔹 MÉTODO PARA APLICAR DAÑO (llamado desde BossController)
     public void ApplyDamage()
     {
-        if (_player == null)
-        {
-            Debug.LogWarning("❌ Player es NULL en BossAttack");
-            return;
-        }
+        if (_player == null) return;
 
         float distance = Vector2.Distance(_attackPoint.position, _player.position);
-        Debug.Log($"💥 BossAttack: Distancia = {distance:F2} | Radio = {_attackRadius}");
 
-        if (distance <= _attackRadius)
+        if (distance <= _attackRadius && _player.TryGetComponent<PlayerController>(out var playerController))
         {
-            PlayerController playerController = _player.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                playerController.TakeDamage(_damage, _bossTransform);
-                Debug.Log($"💥 ¡Jugador recibe {_damage} de daño!");
-            }
-            else
-            {
-                Debug.LogWarning("❌ El jugador no tiene PlayerController");
-            }
-        }
-        else
-        {
-            Debug.Log($"❌ Jugador fuera del área de ataque (Distancia: {distance:F2} > {_attackRadius})");
+            playerController.TakeDamage(_damage, _bossTransform);
         }
     }
 }

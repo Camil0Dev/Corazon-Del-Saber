@@ -15,9 +15,6 @@ public class DeathState : IBossState
     {
         _controller.Animator.SetBool("IsDead", true);
         _controller.Movement.StopMoving();
-        // Opcional: Desactivar colliders
-        // _controller.GetComponent<Collider2D>().enabled = false;
-        Debug.Log("💀 Boss derrotado");
     }
 
     public void Update() { }

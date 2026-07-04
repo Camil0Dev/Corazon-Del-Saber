@@ -20,22 +20,17 @@ public class BossMovement
     public void MoveTo(Vector2 targetPosition)
     {
         Vector2 direction = (targetPosition - (Vector2)_transform.position).normalized;
+        _rb.linearVelocity = new Vector2(direction.x * _speed, 0f);
 
-        // 🔹 MOVIMIENTO SOLO HORIZONTAL (evita flotar)
-        float moveX = direction.x * _speed;
-        _rb.linearVelocity = new Vector2(moveX, 0f);
-
-        // Giro del sprite
-        if (direction.x != 0)
+        if (Mathf.Abs(direction.x) > 0.01f)
         {
-            float sign = _defaultFacingRight ? 1f : -1f;
-            float newScaleX = sign * Mathf.Sign(direction.x) * Mathf.Abs(_spriteTransform.localScale.x);
-            _spriteTransform.localScale = new Vector3(newScaleX, _spriteTransform.localScale.y, _spriteTransform.localScale.z);
+            bool isMovingRight = direction.x > 0;
+            bool shouldFlip = isMovingRight != _defaultFacingRight;
+            
+            float scaleX = Mathf.Abs(_spriteTransform.localScale.x) * (shouldFlip ? -1f : 1f);
+            _spriteTransform.localScale = new Vector3(scaleX, _spriteTransform.localScale.y, _spriteTransform.localScale.z);
         }
     }
 
-    public void StopMoving()
-    {
-        _rb.linearVelocity = Vector2.zero;
-    }
+    public void StopMoving() => _rb.linearVelocity = Vector2.zero;
 }
