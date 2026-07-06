@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     private int facingDirection = 1;
 
     private bool isGrounded;
-    private bool canDash = true;
+    private bool canDash = false;
     private bool isDashing;
     private bool isAttacking;
     private bool isKnockedBack;
@@ -130,7 +130,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Interact() => currentBench?.ActivateBench(gameObject);
+    private void Interact()
+    {
+        if (currentBench != null)
+        {
+            currentBench.ActivateBench(gameObject);
+        }
+        else if (currentChest != null)
+        {
+            currentChest.InteractChest(gameObject);
+        }
+    }
     #endregion
 
     #region Lógica: Movimiento y Salto
@@ -341,10 +351,22 @@ public class PlayerController : MonoBehaviour
     }
 
     public float GetCurrentHealth() => currentHealth;
+    private TreasureChest currentChest;
+
+    public void UnlockDash()
+    {
+        canDash = true;
+        Debug.Log("¡Dash Desbloqueado permanentemente!");
+    }
     #endregion
 
     #region Bench
     public void SetCurrentBench(Bench bench) => currentBench = bench;
     public void ClearCurrentBench() => currentBench = null;
+    #endregion
+
+    #region Treasure Chest
+    public void SetCurrentChest(TreasureChest chest) => currentChest = chest;
+    public void ClearCurrentChest() => currentChest = null;
     #endregion
 }
