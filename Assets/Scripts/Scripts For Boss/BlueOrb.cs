@@ -12,7 +12,7 @@ public class BlueOrb : MonoBehaviour
     
     [Header("Recompensa UI")]
     [SerializeField] private Sprite orbIcon;
-    [TextArea(2, 4)] // Hace que la caja de texto en el Inspector sea más grande
+    [TextArea(2, 4)]
     [SerializeField] private string loreMessage = "Orbe del Saber obtenido.\nUn extraño mecanismo en la superficie parece resonar con su energía...";
 
     private Collider2D col;
@@ -20,13 +20,11 @@ public class BlueOrb : MonoBehaviour
     private void Awake()
     {
         col = GetComponent<Collider2D>();
-        // 🔹 Apagamos la colisión para que el jugador no lo agarre mientras sube
         col.enabled = false; 
     }
 
     private void Start()
     {
-        // El orbe empieza a flotar hacia arriba apenas aparece en la escena
         StartCoroutine(EmergeRoutine());
     }
 
@@ -38,31 +36,27 @@ public class BlueOrb : MonoBehaviour
 
         while (elapsed < riseDuration)
         {
-            // Lerp mueve el objeto del punto A al B de forma súper suave
             transform.position = Vector3.Lerp(startPos, targetPos, elapsed / riseDuration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
         transform.position = targetPos;
-        col.enabled = true; // ¡El orbe ya subió, Eira ya puede agarrarlo!
+        col.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger)
         {
-            // 🔹 INVENTARIO EXPRÉS: Guardamos que tenemos el orbe usando PlayerPrefs
             PlayerPrefs.SetInt("HasBlueOrb", 1);
             PlayerPrefs.Save();
 
-            // Mostramos el texto sugestivo usando el sistema que ya creaste
             if (ItemUnlockUI.Instance != null)
             {
                 ItemUnlockUI.Instance.ShowUnlock(orbIcon, loreMessage);
             }
 
-            // Destruimos el orbe de la escena
             Destroy(gameObject);
         }
     }

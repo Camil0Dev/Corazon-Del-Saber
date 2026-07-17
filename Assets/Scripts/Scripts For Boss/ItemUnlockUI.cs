@@ -12,7 +12,6 @@ public class ItemUnlockUI : MonoBehaviour
     [SerializeField] private GameObject popupPanel;
     [SerializeField] private Image itemIcon;
     
-    // 🔹 CAMBIAMOS EL TIPO DE DATO A TextMeshProUGUI
     [SerializeField] private TextMeshProUGUI itemNameText; 
 
     private void Awake()
@@ -38,7 +37,6 @@ public class ItemUnlockUI : MonoBehaviour
 
         yield return new WaitUntil(() => Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame || Mouse.current.rightButton.wasPressedThisFrame);
 
-        // Descongelamos y ocultamos
         Time.timeScale = 1f;
         popupPanel.SetActive(false);
     }

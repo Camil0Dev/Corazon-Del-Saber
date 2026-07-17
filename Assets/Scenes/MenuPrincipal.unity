@@ -176,7 +176,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -189,7 +189,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: -7337968505409160659, guid: b0414b229802b064fa82315ec45d7ea0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -200,7 +200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1045050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 99632916}
+        m_TargetAssemblyTypeName: MenuNavegacion, Assembly-CSharp
+        m_MethodName: BotonContinuar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1045050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +233,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 740502714362423902, guid: a0d4845fd5b40ae499d2b831bfce16d5, type: 3}
+  m_Sprite: {fileID: 1945269359277807493, guid: 03054f7a8d0f58a4b8b5687e6c897e3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -423,6 +435,7 @@ MonoBehaviour:
   panelControles: {fileID: 940683811}
   tituloPrincipal: {fileID: 899167003}
   contenedorBotones: {fileID: 1898167702}
+  btnContinuar: {fileID: 1045049}
 --- !u!4 &99632917
 Transform:
   m_ObjectHideFlags: 0
@@ -450,7 +463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6827e1776a3486e40afd69fc54f02af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AjustesMenu
-  mezcladorAudio: {fileID: 24100000, guid: 1df8ecc9a46ec064bb6cb2623e1195ae, type: 2}
   textoResolucion: {fileID: 1268279565}
   togglePantalla: {fileID: 1337939286}
 --- !u!1 &227013487
@@ -1089,6 +1101,7 @@ GameObject:
   - component: {fileID: 390723325}
   - component: {fileID: 390723327}
   - component: {fileID: 390723326}
+  - component: {fileID: 390723328}
   m_Layer: 5
   m_Name: Panel de Opciones
   m_TagString: Untagged
@@ -1163,6 +1176,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390723324}
   m_CullTransparentMesh: 1
+--- !u!114 &390723328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390723324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3056fc9af2175a547bbb9c7e1ebe1600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptionsMenu
+  masterSlider: {fileID: 1046367038}
+  musicSlider: {fileID: 681552699}
+  sfxSlider: {fileID: 1723651690}
 --- !u!1 &410046241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &924272606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3331,6 +3359,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1047946984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1047946986}
+  - component: {fileID: 1047946985}
+  m_Layer: 0
+  m_Name: MusicMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1047946985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047946984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550a7ee06e0308c4cae944962797d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuMusicStarter
+  menuMusicClip: {fileID: 8300000, guid: 45b56c535ee5caf49a655d5ae9baec70, type: 3}
+--- !u!4 &1047946986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047946984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 446.78064, y: 209.51863, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1093549319
 GameObject:
   m_ObjectHideFlags: 0
@@ -4205,7 +4278,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 99632916}
         m_TargetAssemblyTypeName: MenuNavegacion, Assembly-CSharp
-        m_MethodName: IniciarJuego
+        m_MethodName: BotonNuevoJuego
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6341,6 +6414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1898167703}
+  - component: {fileID: 1898167704}
   m_Layer: 5
   m_Name: GrupoBotones
   m_TagString: Untagged
@@ -6372,6 +6446,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -167}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1898167704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898167702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e963c00277e6c31489c3cc0cc7381faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
+  btnContinuar: {fileID: 1045049}
 --- !u!1 &1915004309
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,3 +7002,4 @@ SceneRoots:
   - {fileID: 1136583684}
   - {fileID: 99632917}
   - {fileID: 924272607}
+  - {fileID: 1047946986}

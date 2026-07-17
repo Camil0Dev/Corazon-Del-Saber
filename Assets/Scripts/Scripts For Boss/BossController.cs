@@ -93,7 +93,6 @@ public class BossController : MonoBehaviour
         return Vector2.Distance(_attackPoint.position, _player.position) <= _attackRadius;
     }
 
-    // 🔹 Se simplificó usando la lógica que YA existe en tu módulo BossAttack
     public void ApplyDamageToPlayer()
     {
         _attack.ApplyDamage();

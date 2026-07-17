@@ -11,7 +11,7 @@ public class Projectile2D : MonoBehaviour
     [SerializeField] private GameObject impactEffect;
     
     [Header("Colisiones")]
-    [SerializeField] private LayerMask whatDestroysProjectile; // <--- NUEVO: Reemplaza a los Tags
+    [SerializeField] private LayerMask whatDestroysProjectile;
 
     private Vector2 moveDirection;
 
@@ -46,8 +46,6 @@ public class Projectile2D : MonoBehaviour
             return;
         }
 
-        // 2. Detectar si el objeto golpeado pertenece a la LayerMask (Suelo, Paredes, etc.)
-        // Esta línea compara si la capa del objeto colisionado está dentro de las seleccionadas en la LayerMask
         if ((whatDestroysProjectile.value & (1 << collision.gameObject.layer)) > 0)
         {
             Impact();

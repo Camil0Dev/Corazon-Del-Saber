@@ -9,7 +9,7 @@ public class VelumbraAI : MonoBehaviour, IEnemyAI
     [SerializeField] private float detectionRange = 6f;
     [SerializeField] private float attackRange = 1.2f;
     [SerializeField] private float attackCooldown = 1f;
-    [SerializeField] private LayerMask obstacleLayer; // NUEVO: Capa para detectar paredes/suelo
+    [SerializeField] private LayerMask obstacleLayer;
 
     [Header("IA: Wandering (Vagar)")]
     [SerializeField] private float wanderSpeed = 1.5f;
@@ -39,7 +39,6 @@ public class VelumbraAI : MonoBehaviour, IEnemyAI
     private float waitTimer;
     private bool isWaiting;
 
-    // Hashes para optimizar el Animator
     private readonly int IdleState = Animator.StringToHash("Idle");
     private readonly int RunState = Animator.StringToHash("Run");
     private readonly int AttackTrigger = Animator.StringToHash("Attack");
@@ -78,12 +77,10 @@ public class VelumbraAI : MonoBehaviour, IEnemyAI
     #region Lógica de Comportamiento
     private void HandleBehavior()
     {
-        // ESTO ES RÁPIDO
         float sqrDistanceToPlayer = (transform.position - player.position).sqrMagnitude;
         
         bool canSeePlayer = CanSeePlayer(); 
 
-        // Multiplicamos los rangos por sí mismos para hacer una comparación justa
         if (sqrDistanceToPlayer <= (attackRange * attackRange) && canSeePlayer) 
         {
             if (Time.time >= lastAttackTime + attackCooldown)
@@ -101,22 +98,18 @@ public class VelumbraAI : MonoBehaviour, IEnemyAI
         }
     }
 
-    // NUEVO: Función que lanza el "láser visual"
     private bool CanSeePlayer()
     {
         if (player == null) return false;
 
-        // Sumamos un pequeño offset (altura) en Y para que el rayo salga del pecho y no de los pies
         Vector2 eyePosition = new Vector2(transform.position.x, transform.position.y + 0.5f);
         Vector2 playerCenter = new Vector2(player.position.x, player.position.y + 0.5f);
 
         Vector2 directionToPlayer = playerCenter - eyePosition;
         float distance = directionToPlayer.magnitude;
 
-        // Lanzamos el rayo solo contra la capa de obstáculos
         RaycastHit2D hit = Physics2D.Raycast(eyePosition, directionToPlayer.normalized, distance, obstacleLayer);
 
-        // Si hit.collider es null, significa que el rayo llegó a Eira sin chocar con ninguna pared
         return hit.collider == null;
     }
 
@@ -270,7 +263,6 @@ public class VelumbraAI : MonoBehaviour, IEnemyAI
             Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
         }
         
-        // NUEVO GIZMO: Dibuja la línea de visión si el juego está en marcha
         if (Application.isPlaying && player != null)
         {
             Vector2 eyePosition = new Vector2(transform.position.x, transform.position.y + 0.5f);

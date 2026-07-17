@@ -9,6 +9,7 @@ public class FloatingEnemy : MonoBehaviour, IEnemyAI
 
     [Header("Comportamiento: Combate")]
     [SerializeField] private float detectionRange = 8f;
+    [SerializeField] private float attackRange = 5f;
     [SerializeField] private float attackCooldown = 2.5f;
     [SerializeField] private LayerMask obstacleLayer;
 
@@ -47,9 +48,12 @@ public class FloatingEnemy : MonoBehaviour, IEnemyAI
         {
             LookAtTarget(playerTransform.position);
 
-            if (Time.time >= nextAttackTime && !isAttacking)
+            if (sqrDistanceToPlayer <= (attackRange * attackRange))
             {
-                Attack();
+                if (Time.time >= nextAttackTime && !isAttacking)
+                {
+                    Attack();
+                }
             }
         }
         else if (!isAttacking)
@@ -118,6 +122,7 @@ public class FloatingEnemy : MonoBehaviour, IEnemyAI
     {
         isAttacking = false;
     }
+
     private bool CanSeePlayer()
     {
         if (playerTransform == null) return false;
@@ -127,15 +132,32 @@ public class FloatingEnemy : MonoBehaviour, IEnemyAI
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer.normalized, distance, obstacleLayer);
 
-        if (hit.collider != null)
-        {
-            return false;
-        }
-
-        return true;
+        return hit.collider == null;
     }
+
     public void ToggleAI(bool isEnabled)
     {
         this.enabled = isEnabled;
     }
+
+    #region Gizmos
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        Vector2 center = Application.isPlaying ? startPosition : (Vector2)transform.position;
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(center, wanderRadius);
+
+        if (Application.isPlaying && playerTransform != null)
+        {
+            Gizmos.color = CanSeePlayer() ? Color.blue : Color.gray;
+            Gizmos.DrawLine(transform.position, playerTransform.position);
+        }
+    }
+    #endregion
 }

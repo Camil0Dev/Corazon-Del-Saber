@@ -18,7 +18,6 @@ public class AttackState : IBossState
         _controller.Movement.StopMoving();
         _timer = 0;
         
-        // Mantenemos esto si tu lógica de Animation Events lo necesita para asegurar el disparo de la animación
         _controller.ForceAnimation("Attack", 0f);
     }
 

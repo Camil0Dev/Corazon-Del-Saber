@@ -16,6 +16,9 @@ public class BossLootSpawner : MonoBehaviour
     [Header("Salida del Nivel")]
     [SerializeField] private GameObject exitTeleporter;
 
+    [Header("Barreras para abrir")]
+    [SerializeField] private GameObject[] doorsToOpen;
+
     private void OnEnable()
     {
         if (bossHealth != null) bossHealth.OnDeath += SpawnLoot;
@@ -41,6 +44,10 @@ public class BossLootSpawner : MonoBehaviour
             {
                 bossRb.bodyType = RigidbodyType2D.Static;
             }
+            foreach (GameObject door in doorsToOpen)
+            {
+            if (door != null) door.SetActive(false);
+            }
         }
 
         if (blueOrbPrefab != null && bossHealth != null)
@@ -63,7 +70,6 @@ public class BossLootSpawner : MonoBehaviour
             Debug.LogError("¡Falta asignar el Prefab del Cofre o su Punto de Spawn en el Inspector!");
         }
 
-        // 🔹 4. EL TP DE SALIDA
         if (exitTeleporter != null)
         {
             exitTeleporter.SetActive(true);

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // 🔹 Requerido para manipular los Sliders
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class PauseMenu : MonoBehaviour
     
     [Tooltip("Arrastra aquí el Panel de Opciones que está en este Canvas")]
     [SerializeField] private GameObject optionsPanel;
+
+    [Header("Sliders de Audio (Opciones)")]
+    [SerializeField] private Slider masterSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
     private PlayerControls controls;
     private InputAction pauseAction;
@@ -25,6 +31,25 @@ public class PauseMenu : MonoBehaviour
 
         if (pausePanel != null) pausePanel.SetActive(false);
         if (optionsPanel != null) optionsPanel.SetActive(false);
+    }
+
+    private void Start()
+    {
+        if (AudioManager.Instance != null)
+        {
+            if (masterSlider != null) masterSlider.value = AudioManager.Instance.GetMasterVolume();
+            if (musicSlider != null) musicSlider.value = AudioManager.Instance.GetMusicVolume();
+            if (sfxSlider != null) sfxSlider.value = AudioManager.Instance.GetSFXVolume();
+
+            if (masterSlider != null) 
+                masterSlider.onValueChanged.AddListener(AudioManager.Instance.SetMasterVolume);
+            
+            if (musicSlider != null) 
+                musicSlider.onValueChanged.AddListener(AudioManager.Instance.SetMusicVolume);
+            
+            if (sfxSlider != null) 
+                sfxSlider.onValueChanged.AddListener(AudioManager.Instance.SetSFXVolume);
+        }
     }
 
     private void OnEnable()

@@ -5,34 +5,30 @@ using System.Collections;
 
 public class ManejadorTransiciones : MonoBehaviour
 {
-    // Esta variable estática nos permite llamarlo desde CUALQUIER otro script del juego
     public static ManejadorTransiciones Instancia;
 
-    [Header("Configuración")]
+    [Header("Configuraciï¿½n")]
     public Image panelNegro;
     public float duracionFade = 1f;
 
     private void Awake()
     {
-        // El patrón Singleton: Asegura que solo exista UN manejador de transiciones en todo el juego
         if (Instancia == null)
         {
             Instancia = this;
-            DontDestroyOnLoad(gameObject); // ¡Esta es la magia! Hace que no se destruya al cambiar de escena
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject); // Si ya hay uno y cargamos la escena inicial, destruimos la copia
+            Destroy(gameObject);
         }
     }
 
     private void Start()
     {
-        // Al arrancar el juego, hacemos un Fade In (de negro a transparente)
         StartCoroutine(FadeIn());
     }
 
-    // Esta es la función que llamarás desde tus botones o puertas
     public void CargarEscena(string nombreEscena)
     {
         StartCoroutine(Transicion(nombreEscena));
@@ -40,7 +36,6 @@ public class ManejadorTransiciones : MonoBehaviour
 
     private IEnumerator Transicion(string nombreEscena)
     {
-        // 1. FADE OUT (La pantalla se oscurece)
         panelNegro.raycastTarget = true;
         float tiempo = 0f;
         Color color = panelNegro.color;
@@ -53,10 +48,8 @@ public class ManejadorTransiciones : MonoBehaviour
             yield return null;
         }
 
-        // 2. CARGAR LA NUEVA ESCENA (El juego cambia de nivel en secreto detrás de la pantalla negra)
         SceneManager.LoadScene(nombreEscena);
 
-        // 3. FADE IN (La pantalla se aclara y revela el nuevo nivel)
         tiempo = 0f;
         while (tiempo < duracionFade)
         {
@@ -74,7 +67,7 @@ public class ManejadorTransiciones : MonoBehaviour
         panelNegro.raycastTarget = true;
         float tiempo = 0f;
         Color color = panelNegro.color;
-        color.a = 1f; // Empieza 100% negro
+        color.a = 1f;
         panelNegro.color = color;
 
         while (tiempo < duracionFade)

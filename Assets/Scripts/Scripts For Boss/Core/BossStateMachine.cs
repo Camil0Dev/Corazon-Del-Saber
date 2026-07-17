@@ -5,7 +5,6 @@ public class BossStateMachine
 {
     private Dictionary<Type, IBossState> _states = new Dictionary<Type, IBossState>();
 
-    // Propiedad simplificada en lugar del método GetCurrentState<T>()
     public IBossState CurrentState { get; private set; }
 
     public void AddState(IBossState state)

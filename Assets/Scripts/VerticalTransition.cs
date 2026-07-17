@@ -15,7 +15,6 @@ public class VerticalTransition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verificamos que sea el jugador
         if (collision.CompareTag("Player"))
         {
             TeleportPlayer(collision.transform);

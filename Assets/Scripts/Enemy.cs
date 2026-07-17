@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
+
 public class Enemy : MonoBehaviour
 {
     [Header("Estadísticas de Vida")]
@@ -19,16 +20,14 @@ public class Enemy : MonoBehaviour
     private float currentHealth;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
-    
-    // NUEVO: Ahora usamos la interfaz universal en lugar de un MonoBehaviour específico
-    private IEnemyAI aiScript; 
+
+    private IEnemyAI aiScript;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Buscamos cualquier script en este enemigo que tenga la interfaz (Slime, Velumbra, etc.)
         aiScript = GetComponent<IEnemyAI>();
 
         currentHealth = maxHealth;
@@ -45,7 +44,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage, Transform damageSource = null)
     {
         currentHealth -= damage;
-        currentHealth = Mathf.Max(0, currentHealth); 
+        currentHealth = Mathf.Max(0, currentHealth);
 
         if (healthBar != null)
         {
@@ -73,24 +72,22 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private IEnumerator KnockbackRoutine(Transform source)
     {
-        // Apagamos el cerebro usando el contrato
         if (aiScript != null) aiScript.ToggleAI(false);
 
-        rb.linearVelocity = Vector2.zero; 
+        rb.linearVelocity = Vector2.zero;
 
         float dir = (source.position.x > transform.position.x) ? -1 : 1;
         rb.AddForce(new Vector2(knockbackForceX * dir, knockbackForceY), ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(knockbackDuration);
 
-        rb.linearVelocity = Vector2.zero; 
+        rb.linearVelocity = Vector2.zero;
 
-        // Encendemos el cerebro de nuevo
         if (aiScript != null) aiScript.ToggleAI(true);
     }
 
@@ -102,6 +99,14 @@ public class Enemy : MonoBehaviour
             {
                 player.TakeDamage(damageToPlayer, transform);
             }
+        }
+    }
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(currentHealth, maxHealth);
         }
     }
 }

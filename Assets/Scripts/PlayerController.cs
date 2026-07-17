@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(SpriteRenderer))]
 public class PlayerController : MonoBehaviour
@@ -37,6 +38,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.27f;
+
+    [Header("Sonidos de Combate")]
+    [SerializeField] private AudioClip swordSwingSound;
     #endregion
 
     #region Variables: Estado Interno
@@ -60,7 +64,6 @@ public class PlayerController : MonoBehaviour
     private bool isDead;
     private Bench currentBench;
 
-    // 🔹 CACHÉ DE ANIMACIONES (Optimización)
     private readonly int AnimSpeed = Animator.StringToHash("speed");
     private readonly int AnimIsGrounded = Animator.StringToHash("isGrounded");
     private readonly int AnimYVelocity = Animator.StringToHash("yVelocity");
@@ -81,7 +84,7 @@ public class PlayerController : MonoBehaviour
         originalGravity = rb.gravityScale;
         currentHealth = maxHealth;
 
-        UpdateHUD(); // 🔹 Llamar solo al iniciar, no en Update
+        UpdateHUD();
 
         SetupInputSystem();
     }
@@ -155,7 +158,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            anim.SetTrigger(AnimJump); // 🔹 Usando el Hash
+            anim.SetTrigger(AnimJump);
         }
     }
 
@@ -224,6 +227,11 @@ public class PlayerController : MonoBehaviour
 
         nextAttackTime = Time.time + 1f / attackRate;
         StartCoroutine(EndAttackRoutine(0.35f));
+
+        if (AudioManager.Instance != null && swordSwingSound != null)
+        {
+            AudioManager.Instance.PlaySFX(swordSwingSound, true); 
+        }
     }
 
     private IEnumerator EndAttackRoutine(float delay)
@@ -257,7 +265,7 @@ public class PlayerController : MonoBehaviour
         if (isInvulnerable || isDashing || isDead) return;
 
         currentHealth = Mathf.Max(0, currentHealth - damage);
-        UpdateHUD(); // 🔹 Llamamos a la UI solo cuando recibe daño
+        UpdateHUD();
 
         if (currentHealth <= 0) Die();
         else
@@ -272,7 +280,7 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        StopAllCoroutines(); // 🔹 Seguridad: detiene Dash, Knockback, etc. inmediatamente
+        StopAllCoroutines();
 
         UpdateHUD();
         anim.SetTrigger(AnimDie);
@@ -281,7 +289,7 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = originalGravity;
 
         controls.Disable();
-        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast"); // 🔹 Eliminado el número mágico
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 
         StartCoroutine(DeathSequenceRoutine());
     }
@@ -289,7 +297,22 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DeathSequenceRoutine()
     {
         yield return new WaitForSeconds(1.8f);
-        gameObject.SetActive(false);
+
+        if (PlayerPrefs.HasKey("SavedScene"))
+        {
+            PlayerPrefs.SetInt("LoadFromSave", 1);
+            PlayerPrefs.Save();
+
+            string sceneToLoad = PlayerPrefs.GetString("SavedScene");
+            SceneManager.LoadScene(sceneToLoad);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("LoadFromSave", 0);
+            PlayerPrefs.Save();
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private IEnumerator InvulnerabilityRoutine()

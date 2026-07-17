@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8104593530006869458}
   - component: {fileID: 7731850734349052584}
   - component: {fileID: 2851829295310731527}
+  - component: {fileID: 6326738514846334198}
   m_Layer: 20
   m_Name: Velumbra
   m_TagString: Untagged
@@ -206,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20eea220a923ae54fa6a15ab938ea2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  maxHealth: 100
+  maxHealth: 30
   damageToPlayer: 10
   healthBar: {fileID: 2191166437280921334}
   knockbackForceX: 8
@@ -242,6 +243,18 @@ MonoBehaviour:
     m_Bits: 131072
   edgeCheckOffset: 1.56
   edgeCheckLength: 1.52
+--- !u!114 &6326738514846334198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6370978982053049809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576b639451c52b849ac4dcab94de69d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyRespawner
 --- !u!1 &6471463975790634416
 GameObject:
   m_ObjectHideFlags: 0

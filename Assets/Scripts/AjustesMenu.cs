@@ -1,16 +1,16 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 
 public class AjustesMenu : MonoBehaviour
 {
-    [Header("Configuración de Audio")]
-    public AudioMixer mezcladorAudio;
-
-    [Header("Configuración de Resolución")]
+    [Header("ConfiguraciÃ³n de ResoluciÃ³n")]
     public TMP_Text textoResolucion;
     public Toggle togglePantalla;
+    
+    // public Slider sliderMaestro;
+    // public Slider sliderMusica;
+    // public Slider sliderSFX;
 
     private Vector2Int[] resoluciones = new Vector2Int[]
     {
@@ -23,50 +23,89 @@ public class AjustesMenu : MonoBehaviour
 
     void Start()
     {
-        // 1. Cargar las opciones guardadas (Si es la primera vez, usa FullScreen y 1080p por defecto)
         int resolucionGuardada = PlayerPrefs.GetInt("ResIndex", 2);
         bool pantallaCompletaGuardada = PlayerPrefs.GetInt("FullScreen", 1) == 1;
 
-        indiceActual = resolucionGuardada;
+        indiceActual = Mathf.Clamp(resolucionGuardada, 0, resoluciones.Length - 1);
 
-        // 2. Aplicar la resolución y pantalla al arrancar
         Screen.SetResolution(resoluciones[indiceActual].x, resoluciones[indiceActual].y, pantallaCompletaGuardada);
         ActualizarTextoPantalla();
 
-        // 3. Actualizar el Toggle SIN disparar el evento de clic
         if (togglePantalla != null)
         {
             togglePantalla.SetIsOnWithoutNotify(pantallaCompletaGuardada);
         }
+
+        SincronizarSlidersAudio();
+    }
+
+
+    public void CambiarVolumenMaestro(float valor)
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetMasterVolume(valor);
+        }
+        PlayerPrefs.SetFloat("MasterVolume", valor);
+        PlayerPrefs.Save();
     }
 
     public void CambiarVolumenMusica(float valor)
     {
-        mezcladorAudio.SetFloat("VolumenMusica", Mathf.Log10(valor) * 20);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetMusicVolume(valor);
+        }
+        PlayerPrefs.SetFloat("MusicVolume", valor);
+        PlayerPrefs.Save();
     }
 
-    public void CambiarVolumenMaestro(float valor)
+    public void CambiarVolumenSFX(float valor)
     {
-        mezcladorAudio.SetFloat("VolumenMaestro", Mathf.Log10(valor) * 20);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetSFXVolume(valor);
+        }
+        PlayerPrefs.SetFloat("SFXVolume", valor);
+        PlayerPrefs.Save();
     }
+
+    private void SincronizarSlidersAudio()
+    {
+        if (AudioManager.Instance == null) return;
+
+        /*
+        if (sliderMaestro != null) sliderMaestro.value = AudioManager.Instance.GetMasterVolume();
+        if (sliderMusica != null) sliderMusica.value = AudioManager.Instance.GetMusicVolume();
+        if (sliderSFX != null) sliderSFX.value = AudioManager.Instance.GetSFXVolume();
+        */
+    }
+
 
     public void ActivarPantallaCompleta(bool esCompleta)
     {
         Screen.fullScreen = esCompleta;
 
-        // Guardar la preferencia del jugador
         PlayerPrefs.SetInt("FullScreen", esCompleta ? 1 : 0);
         PlayerPrefs.Save();
     }
 
     public void ResolucionSiguiente()
     {
-        if (indiceActual < resoluciones.Length - 1) { indiceActual++; AplicarResolucion(); }
+        if (indiceActual < resoluciones.Length - 1) 
+        { 
+            indiceActual++; 
+            AplicarResolucion(); 
+        }
     }
 
     public void ResolucionAnterior()
     {
-        if (indiceActual > 0) { indiceActual--; AplicarResolucion(); }
+        if (indiceActual > 0) 
+        { 
+            indiceActual--; 
+            AplicarResolucion(); 
+        }
     }
 
     private void AplicarResolucion()
@@ -74,7 +113,6 @@ public class AjustesMenu : MonoBehaviour
         ActualizarTextoPantalla();
         Screen.SetResolution(resoluciones[indiceActual].x, resoluciones[indiceActual].y, Screen.fullScreen);
 
-        // Guardar la preferencia del jugador
         PlayerPrefs.SetInt("ResIndex", indiceActual);
         PlayerPrefs.Save();
     }

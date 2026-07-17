@@ -28,7 +28,6 @@ public class TreasureChest : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         if (closedSprite != null) sr.sprite = closedSprite; 
         
-        // Nos aseguramos de que el texto esté oculto al iniciar
         if (interactUI != null) interactUI.SetActive(false); 
     }
 
@@ -36,9 +35,8 @@ public class TreasureChest : MonoBehaviour
     {
         if (!isOpened && collision.CompareTag("Player") && !collision.isTrigger)
         {
-            if (interactUI != null) interactUI.SetActive(true); // Mostrar texto
+            if (interactUI != null) interactUI.SetActive(true);
 
-            // Le decimos a Eira que está frente a un cofre
             if (collision.TryGetComponent<PlayerController>(out var player))
             {
                 player.SetCurrentChest(this);
@@ -50,9 +48,8 @@ public class TreasureChest : MonoBehaviour
     {
         if (!isOpened && collision.CompareTag("Player") && !collision.isTrigger)
         {
-            if (interactUI != null) interactUI.SetActive(false); // Ocultar texto
+            if (interactUI != null) interactUI.SetActive(false);
 
-            // Limpiamos la referencia cuando Eira se aleja
             if (collision.TryGetComponent<PlayerController>(out var player))
             {
                 player.ClearCurrentChest();
@@ -60,15 +57,12 @@ public class TreasureChest : MonoBehaviour
         }
     }
 
-    // 🔹 Este método es llamado por el PlayerController cuando presionas 'E'
     public void InteractChest(GameObject player)
     {
         if (isOpened) return;
         
-        // Ocultar texto permanentemente
         if (interactUI != null) interactUI.SetActive(false); 
         
-        // Limpiar la referencia en el jugador para que no intente interactuar de nuevo
         if (player.TryGetComponent<PlayerController>(out var controller))
         {
             controller.ClearCurrentChest();
@@ -81,21 +75,17 @@ public class TreasureChest : MonoBehaviour
     {
         isOpened = true;
 
-        // Frame 2: Medio Abierto
         if (halfOpenSprite != null) sr.sprite = halfOpenSprite;
         yield return new WaitForSeconds(animationDelay);
         
-        // Frame 3: Abierto
         if (openSprite != null) sr.sprite = openSprite;
 
-        // Desbloquear el Dash y llamar a la UI
         if (player.TryGetComponent<PlayerController>(out PlayerController controller))
         {
             controller.UnlockDash();
             
             if (ItemUnlockUI.Instance != null)
             {
-                // Ahora toma el mensaje que escribas directamente en el Inspector
                 ItemUnlockUI.Instance.ShowUnlock(iconBoots, unlockMessage);
             }
         }

@@ -10,17 +10,14 @@ public class SimpleParallax : MonoBehaviour
 
     private void Start()
     {
-        // Encontramos la cámara principal automáticamente
         cam = Camera.main.transform;
         lastCamPos = cam.position;
     }
 
     private void LateUpdate()
     {
-        // Calculamos cuánto se movió la cámara en este frame
         Vector3 deltaMovement = cam.position - lastCamPos;
         
-        // Movemos el fondo en base a ese movimiento y el multiplicador
         transform.position += deltaMovement * parallaxEffect;
         
         lastCamPos = cam.position;

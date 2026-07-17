@@ -19,6 +19,8 @@ public class BossMovement
 
     public void MoveTo(Vector2 targetPosition)
     {
+        if (_rb.bodyType == RigidbodyType2D.Static) return;
+
         Vector2 direction = (targetPosition - (Vector2)_transform.position).normalized;
         _rb.linearVelocity = new Vector2(direction.x * _speed, 0f);
 
@@ -26,11 +28,17 @@ public class BossMovement
         {
             bool isMovingRight = direction.x > 0;
             bool shouldFlip = isMovingRight != _defaultFacingRight;
-            
+
             float scaleX = Mathf.Abs(_spriteTransform.localScale.x) * (shouldFlip ? -1f : 1f);
             _spriteTransform.localScale = new Vector3(scaleX, _spriteTransform.localScale.y, _spriteTransform.localScale.z);
         }
     }
 
-    public void StopMoving() => _rb.linearVelocity = Vector2.zero;
+    public void StopMoving()
+    {
+        if (_rb.bodyType != RigidbodyType2D.Static)
+        {
+            _rb.linearVelocity = Vector2.zero;
+        }
+    }
 }

@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7599107350505846919}
   - component: {fileID: 2499398426558109799}
   - component: {fileID: 7377757669625437443}
+  - component: {fileID: 2916742905981996298}
   m_Layer: 20
   m_Name: Brinelume
   m_TagString: Untagged
@@ -227,9 +228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FloatingEnemy
   wanderSpeed: 1.5
-  wanderRadius: 5.07
+  wanderRadius: 3.5
   waitTimeAtPoint: 2
-  detectionRange: 8
+  detectionRange: 7.5
+  attackRange: 4.8
   attackCooldown: 2.5
   obstacleLayer:
     serializedVersion: 2
@@ -255,6 +257,18 @@ MonoBehaviour:
   knockbackForceX: 5
   knockbackForceY: 2
   knockbackDuration: 0.2
+--- !u!114 &2916742905981996298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2857821627441310424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576b639451c52b849ac4dcab94de69d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyRespawner
 --- !u!1001 &4618734827998254065
 PrefabInstance:
   m_ObjectHideFlags: 0
