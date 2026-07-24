@@ -59,17 +59,15 @@ Características:
 # ⚔️ Enemigos
 
 Actualmente el proyecto incluye:
-- Enemigo terrestre (Patrullaje)
-- Enemigo acuático / Volador
-- Enemigo avanzado
-- Mini Boss (Velumbra)
+- Enemigo terrestre (Velumbra)
+- Enemigo Volador (Brinelume)
+- Enemigo avanzado Mini Boss (Eco De La Duda)
 
 ---
 
 # 🧪 Objetos e Ítems
 
 - ❤️ **Orbe de Vida:** Soltado por enemigos al morir (probabilidad configurable).
-- 🏺 **Poción de Curación Rápida**
 - 👢 **Botas del Impulso:** Desbloquea la habilidad de Dash.
 
 ---
@@ -78,7 +76,7 @@ Actualmente el proyecto incluye:
 
 - Unity 6 LTS
 - C# (Arquitectura orientada a objetos, Singleton, ScriptableObjects)
-- Visual Studio 2022
+- Visual Studio Code
 - Git & GitHub
 - Aseprite
 - Cinemachine 3
@@ -121,7 +119,7 @@ Assets
 git clone https://github.com/Camil0Dev/Corazon-del-Saber.git
 ```
 2. Abrir el proyecto con **Unity 6 LTS**.
-3. Abrir la escena principal.
+3. Abrir la escena principal llamada (PantallaEntrada).
 4. Presionar **Play**.
 
 ---
