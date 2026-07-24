@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee88c200527aaca4a818452adbad5f89, type: 3}
+  m_Name: Lore_Terminales
+  m_EditorClassIdentifier: Assembly-CSharp::LoreData
+  tipoDeLore: 3
+  textos:
+  - "Terminal S.E.N.A. inicializada. \nCargando m\xF3dulos: El conocimiento es el
+    motor que construye el futuro."
+  - "Registro del Sistema S.E.N.A.: \nFormando a los arquitectos del ma\xF1ana a
+    trav\xE9s de la tecnolog\xEDa y la innovaci\xF3n."
+  - "Base de datos S.E.N.A. en l\xEDnea: \nBienvenido, aprendiz. El talento humano
+    es nuestro recurso m\xE1s valioso."
+  - "Directriz S.E.N.A. #01: \n'Aprender haciendo'. La pr\xE1ctica es la base de
+    nuestra evoluci\xF3n."
+  - "Archivo de Aprendizaje S.E.N.A.: \nDonde el emprendimiento y el trabajo se encuentran
+    para forjar un nuevo mundo."
+  - "Conexi\xF3n S.E.N.A. establecida. Descargando archivos de conocimiento, equidad
+    y desarrollo tecnol\xF3gico."
+  - "Terminal S.E.N.A.: \nEl conocimiento no se destruye con la Desconexi\xF3n, se
+    transforma en progreso."
+  - "Mensaje del Sistema S.E.N.A.: \nSembrando la semilla del saber para cosechar
+    a los l\xEDderes del futuro."
+  - "Protocolo S.E.N.A. activado. \nPreparando a los aprendices para superar cualquier
+    reto que la historia les depare."
+  - "Terminal S.E.N.A.: \nCreemos en tu potencial, aprendiz. El \xFAnico l\xEDmite
+    para la educaci\xF3n es el que t\xFA mismo te impongas."

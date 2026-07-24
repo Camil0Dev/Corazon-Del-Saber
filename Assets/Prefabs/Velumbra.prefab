@@ -88,7 +88,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6703502475811092386, guid: ab08e6aa2a6ffbc41b8a4319c004c49c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -207,8 +207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20eea220a923ae54fa6a15ab938ea2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  maxHealth: 30
-  damageToPlayer: 10
+  maxHealth: 45
+  damageToPlayer: 20
+  healthOrbPrefab: {fileID: 90910368967666242, guid: 01a90700cdc2ed744825dde00505469a, type: 3}
+  dropChance: 50
   healthBar: {fileID: 2191166437280921334}
   knockbackForceX: 8
   knockbackForceY: 3
@@ -281,7 +283,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.83, y: -0.12, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 943176091715145308}

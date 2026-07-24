@@ -232,6 +232,7 @@ MonoBehaviour:
   waitTimeAtPoint: 2
   detectionRange: 7.5
   attackRange: 4.8
+  chaseSpeed: 2.5
   attackCooldown: 2.5
   obstacleLayer:
     serializedVersion: 2
@@ -251,8 +252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20eea220a923ae54fa6a15ab938ea2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  maxHealth: 50
+  maxHealth: 30
   damageToPlayer: 5
+  healthOrbPrefab: {fileID: 90910368967666242, guid: 01a90700cdc2ed744825dde00505469a, type: 3}
+  dropChance: 50
   healthBar: {fileID: 8361136303819696544}
   knockbackForceX: 5
   knockbackForceY: 2

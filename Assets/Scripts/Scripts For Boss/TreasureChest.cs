@@ -84,6 +84,9 @@ public class TreasureChest : MonoBehaviour
         {
             controller.UnlockDash();
             
+            PlayerPrefs.SetInt("HasDash", 1);
+            PlayerPrefs.Save();
+            
             if (ItemUnlockUI.Instance != null)
             {
                 ItemUnlockUI.Instance.ShowUnlock(iconBoots, unlockMessage);

@@ -15,8 +15,8 @@ MonoBehaviour:
   _favorites: []
   _recent:
   - Assets/Scenes/SantuarioAgua.unity
-  - Assets/Scenes/PantallaEntrada.unity
   - Assets/Scenes/PlanicieSaber.unity
+  - Assets/Scenes/PantallaEntrada.unity
   - Assets/Scenes/MenuPrincipal.unity
   - Assets/Scenes/SantuarioDelAgua_Prototipo.unity
   _groups: []

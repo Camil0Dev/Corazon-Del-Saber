@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee88c200527aaca4a818452adbad5f89, type: 3}
+  m_Name: Lore_Tablillas
+  m_EditorClassIdentifier: Assembly-CSharp::LoreData
+  tipoDeLore: 1
+  textos:
+  - "Registro 44-A:\nLa Red Central ha alcanzado su capacidad m\xE1xima. Se proh\xEDbe
+    la transferencia de recuerdos triviales hasta nuevo aviso."
+  - "Archivo Hist\xF3rico:\nEn el albor de la Era de Sintetizaci\xF3n, construimos
+    el primer Enlace. Cre\xEDmos haber asesinado a la soledad para siempre."
+  - "Edicto del Consejo:\nAquellos que muestren s\xEDntomas de desincronizaci\xF3n
+    ser\xE1n exiliados a los P\xE1ramos Inferiores inmediatamente."
+  - "Cr\xF3nica Arquitect\xF3nica:\nNuestra arquitectura desafi\xF3 a la entrop\xEDa.
+    Construimos torres de datos que rozaban la estratosfera, desafiando a los mismos
+    dioses."
+  - "Reporte de Anomal\xEDa - D\xEDa 12:\nA\xFAn sin respuesta del N\xFAcleo Principal.
+    Los ciudadanos han comenzado a reportar fallos de memoria severos."
+  - "Documento de Mantenimiento:\nLas fisuras en el cristal de datos no son estructurales.
+    Parecen... org\xE1nicas. Como si el sistema estuviera enfermando."
+  - "Manifiesto Filos\xF3fico:\nEnse\xF1amos a las m\xE1quinas a sentir por nosotros,
+    para que nosotros pudi\xE9ramos dedicarnos a pensar. Fue nuestro mayor error
+    de c\xE1lculo."
+  - "Informe Clasificado:\nLos Arquitectos advirtieron que una Desconexi\xF3n s\xFAbita
+    causar\xEDa un colapso neurol\xF3gico masivo. Este documento debe ser destruido."
+  - "Nota grabada a prisa:\nA quien encuentre esto: La historia no se borr\xF3 sola.
+    Nosotros mismos la destruimos para no recordar lo que perdimos."
+  - "\xDAltimo Registro T\xE9cnico:\nLa energ\xEDa auxiliar caer\xE1 en dos ciclos.
+    Que el silencio que se avecina sea piadoso con nosotros."

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee88c200527aaca4a818452adbad5f89, type: 3}
+  m_Name: Lore_Ecos
+  m_EditorClassIdentifier: Assembly-CSharp::LoreData
+  tipoDeLore: 0
+  textos:
+  - "El cristal vibr\xF3 antes de apagarse... Sent\xED fr\xEDo por primera vez en
+    mi vida."
+  - "\xBFA d\xF3nde fue la luz? Recuerdo que el cielo sol\xEDa cantar cuando est\xE1bamos
+    todos conectados."
+  - No lo olvides... La frecuencia de reinicio era 4-7-2. Por favor, no lo olvides...
+  - "Ten\xEDamos tanto miedo de cerrar los ojos. Tem\xEDamos no despertar en la Red."
+  - ...y cuando el hilo se rompa, todos caeremos en el silencio.
+  - "Eira intent\xF3 advertirnos. El n\xFAcleo no estaba estabilizado. Nunca lo estuvo."
+  - "Sigo escuchando el zumbido de las m\xE1quinas... aunque s\xE9 que llevan siglos
+    muertas."
+  - "Me prometieron que el Enlace nos mantendr\xEDa unidos en la eternidad. Eran
+    mentiras."
+  - "Siento como si me faltara un brazo, una pierna... No, me falta la mente de los
+    dem\xE1s."
+  - "La oscuridad no vino de afuera. Brot\xF3 desde dentro de nuestros propios cables."
